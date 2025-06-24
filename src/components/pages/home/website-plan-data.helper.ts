@@ -8,6 +8,8 @@ export interface IPricingPlan {
     monthly: number;
     quarterly: number;
     yearly: number;
+    discount?: string;
+    badge?: string;
   };
   description: string;
   team: string;
@@ -48,9 +50,15 @@ export const formatPrice = ({
   price,
   currency,
 }: {
-  price: number;
+  price?: number | string;
   currency: "GBP" | "USD";
 }) => {
+  if (!price) return "Custom";
+
+  if (typeof price === "string") {
+    price = Number(price);
+  }
+
   if (price === 0) return "Custom";
   const symbol = currency === "GBP" ? "£" : "$";
   const convertedPrice = currency === "USD" ? Math.round(price * 1.27) : price;
@@ -66,7 +74,12 @@ export const pricingTabs: ITeamTab[] = [
       {
         id: "website-standard",
         name: "Standard",
-        pricing: { monthly: 2900, quarterly: 2610, yearly: 2417 },
+        pricing: {
+          monthly: 2900,
+          quarterly: 2610,
+          yearly: 2417,
+          discount: "10%",
+        },
         description: "Perfect for growing startups and scale-ups",
         team: "1 Designer, 1 Developer, 1 PM",
         features: [
@@ -108,7 +121,7 @@ export const pricingTabs: ITeamTab[] = [
         id: "website-enterprise",
         name: "Enterprise",
         isCustom: true,
-        pricing: { monthly: 0, quarterly: 0, yearly: 0 },
+        pricing: { monthly: 0, quarterly: 0, yearly: 0, badge: "1 month free" },
         description: "Tailored solutions for large organizations",
         team: "Unlimited Talent Pool",
         features: [

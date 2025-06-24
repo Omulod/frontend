@@ -45,7 +45,7 @@ const ServicesCard = ({
         <ul>
           {points.map((item, index) => (
             <li key={index} className="flex items-center gap-2 mb-3.5">
-              <CheckIcon size={16} />
+              <CheckIcon size={16} className="text-primary-500" />
               <span className="line-clamp-1 max-w-[calc(100%-1.5rem)]">
                 {item}
               </span>
