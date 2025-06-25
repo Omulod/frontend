@@ -8,6 +8,7 @@ import ChallengeSection from "./challenge-section";
 import ProblemSolutionSection from "./problem-solution-section";
 import UiUxDesignSection from "./ui-ux-design-section";
 import DesignProcessSection from "./design-process-section";
+import MobileFirstDesignSection from "./mobile-first-design-section";
 
 const tabLinks = [
   { title: "Overview", href: "#overview" },
@@ -16,6 +17,7 @@ const tabLinks = [
   { title: "Problems & Solutions", href: "#problems-solutions" },
   { title: "UX/UI Design", href: "#ux-ui-design" },
   { title: "Design Process & Mockups", href: "#design-process" },
+  { title: "Mobile First Design", href: "#mobile-first-design" },
   { title: "Development", href: "#development" },
   { title: "Result & metrics", href: "#result-metrics" },
   { title: "Client review", href: "#client-review" },
@@ -105,6 +107,7 @@ const MainSectionContainer = () => {
           <ProblemSolutionSection />
           <UiUxDesignSection />
           <DesignProcessSection />
+          <MobileFirstDesignSection />
         </div>
       </div>
     </div>
