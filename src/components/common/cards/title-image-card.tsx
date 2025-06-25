@@ -20,7 +20,7 @@ const TitleImageCard = ({
         width={531}
         height={398}
         alt={title}
-        className="rounded-2xl"
+        className="rounded-2xl w-full object-cover"
       />
     </div>
   );

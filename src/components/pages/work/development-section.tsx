@@ -1,5 +1,6 @@
 import TwoSidePointsCard from "@/components/common/cards/two-side-points-card";
 import IncreaseIcon from "@/components/ui/icons/increase-icon";
+import DevelopmentSlider from "./development-slider";
 
 const DevelopmentSection = () => {
   return (
@@ -34,6 +35,10 @@ const DevelopmentSection = () => {
             platforms.
           </p>
         </div>
+      </div>
+
+      <div className="mt-8 rounded-3xl border border-neutral-500 p-8">
+        <DevelopmentSlider />
       </div>
     </div>
   );

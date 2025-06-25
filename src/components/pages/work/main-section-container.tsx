@@ -10,6 +10,7 @@ import UiUxDesignSection from "./ui-ux-design-section";
 import DesignProcessSection from "./design-process-section";
 import MobileFirstDesignSection from "./mobile-first-design-section";
 import DevelopmentSection from "./development-section";
+import ResultMetricsSection from "./result-metrics-section";
 
 const tabLinks = [
   { title: "Overview", href: "#overview" },
@@ -110,6 +111,7 @@ const MainSectionContainer = () => {
           <DesignProcessSection />
           <MobileFirstDesignSection />
           <DevelopmentSection />
+          <ResultMetricsSection />
         </div>
       </div>
     </div>
