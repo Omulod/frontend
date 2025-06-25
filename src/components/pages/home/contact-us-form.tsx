@@ -32,9 +32,9 @@ const ContactUsForm = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    control,
-    setValue,
-    watch,
+    // control,
+    // setValue,
+    // watch,
   } = useForm({
     resolver: yupResolver(contactFormSchema),
   });
