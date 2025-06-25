@@ -3,6 +3,7 @@ import OmulodIcon from "@/components/ui/icons/omulod-icon";
 import { cn } from "@/helpers/cn";
 import { IFeaturedWork } from "@/types/common.types";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IFeaturedCardProps extends IFeaturedWork {
   className?: string;
@@ -35,9 +36,11 @@ const FeaturedCard = ({
           alt={title}
           className="border border-neutral-500 rounded-3xl object-scale-down"
         />
-        <Button intent="secondary" size="large" className="mt-8 w-full">
-          Explore
-        </Button>
+        <Link href={`/work/${url}`}>
+          <Button intent="secondary" size="large" className="mt-8 w-full">
+            Explore
+          </Button>
+        </Link>
       </div>
       <div className="lg:col-span-7">
         <p className="uppercase text-primary-500 text-xl font-semibold mb-2.5">
