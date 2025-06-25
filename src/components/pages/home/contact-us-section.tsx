@@ -27,8 +27,8 @@ const contactUsData = [
 
 const ContactUsSection = () => {
   return (
-    <div className="container py-28 grid grid-cols-12 gap-6">
-      <div className="col-span-8">
+    <div className="container py-28 grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="lg:col-span-8">
         <SectionHeading
           subtitle="Contact Us"
           title="Ready to share your vision? Let’s talk!"
@@ -48,7 +48,7 @@ const ContactUsSection = () => {
 
         <ContactUsForm />
       </div>
-      <div className="col-span-4 h-fit border border-neutral-500 rounded-2xl overflow-hidden">
+      <div className="lg:col-span-4 h-fit border border-neutral-500 rounded-2xl overflow-hidden">
         {contactUsData.map((item, index) => (
           <ContactCard
             key={index}

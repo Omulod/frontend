@@ -132,7 +132,7 @@ const ContactUsForm = () => {
         <label className="inline-block font-bold text-primary-500 uppercase mb-4">
           Your Budget for This Project?
         </label>
-        <div className="flex space-x-4">
+        <div className="flex flex-wrap space-y-2 space-x-4">
           {budgetOptions.map((option) => (
             <button
               key={option.value}
@@ -151,7 +151,7 @@ const ContactUsForm = () => {
         </div>
       </div>
 
-      <div className="flex items-center gap-8">
+      <div className="flex flex-wrap items-center gap-8">
         <Button
           type="submit"
           intent="secondary"

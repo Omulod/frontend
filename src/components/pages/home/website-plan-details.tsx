@@ -34,12 +34,12 @@ const WebsitePlanDetails = () => {
   return (
     <div className="container">
       {/* Tab Navigation */}
-      <div className="rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex items-center justify-between gap-6 p-2 w-full my-14">
+      <div className="rounded-3xl lg:rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex flex-wrap items-center justify-between gap-6 p-2 w-full my-14">
         <div>
           {pricingTabs.map((item) => (
             <button
               key={item.id}
-              className="relative px-10 cursor-pointer py-2 font-semibold rounded-[100px]"
+              className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px]"
               onClick={handleTabClick(item.id)}
             >
               <span
@@ -79,7 +79,7 @@ const WebsitePlanDetails = () => {
       </div>
 
       {/* Billing Period Selector */}
-      <div className="flex items-center gap-4 justify-center mb-[4.75rem]">
+      <div className="flex items-center flex-wrap gap-4 justify-center mb-[4.75rem]">
         {billingPeriods.map((period) => (
           <Button
             key={period.id}

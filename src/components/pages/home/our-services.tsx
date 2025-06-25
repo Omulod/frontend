@@ -147,12 +147,7 @@ const OurServices = () => {
               </p>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {item.items.map((item, index) => (
-                  <ServicesCard
-                    key={index}
-                    {...item}
-                    className="h-fit"
-                    isActive={serviceindex === 0 && index === 0}
-                  />
+                  <ServicesCard key={index} {...item} className="h-fit" />
                 ))}
               </div>
             </div>
