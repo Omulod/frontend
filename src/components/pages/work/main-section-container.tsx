@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 import BusinessNeedsSection from "./business-needs-section";
 import ChallengeSection from "./challenge-section";
 import ProblemSolutionSection from "./problem-solution-section";
+import UiUxDesignSection from "./ui-ux-design-section";
+import DesignProcessSection from "./design-process-section";
 
 const tabLinks = [
   { title: "Overview", href: "#overview" },
@@ -13,12 +15,13 @@ const tabLinks = [
   { title: "Challenge", href: "#challenge" },
   { title: "Problems & Solutions", href: "#problems-solutions" },
   { title: "UX/UI Design", href: "#ux-ui-design" },
+  { title: "Design Process & Mockups", href: "#design-process" },
   { title: "Development", href: "#development" },
   { title: "Result & metrics", href: "#result-metrics" },
   { title: "Client review", href: "#client-review" },
 ];
 
-const WorkBusinessNeeds = () => {
+const MainSectionContainer = () => {
   const [activeHash, setActiveHash] = useState<string>("#overview");
 
   // Update hash when URL changes
@@ -76,7 +79,7 @@ const WorkBusinessNeeds = () => {
   return (
     <div className="py-14 relative bg-neutral-900">
       <div className="container grid grid-cols-12 gap-8">
-        <div className="col-span-3 border border-neutral-500 bg-neutral-0/5 p-8 rounded-3xl sticky top-8 self-start">
+        <div className="col-span-3 bg-neutral-0/5 p-8 rounded-3xl sticky top-8 self-start">
           <div className="flex flex-col gap-3.5">
             {tabLinks.map((item, index) => (
               <Link
@@ -100,10 +103,12 @@ const WorkBusinessNeeds = () => {
           <BusinessNeedsSection />
           <ChallengeSection />
           <ProblemSolutionSection />
+          <UiUxDesignSection />
+          <DesignProcessSection />
         </div>
       </div>
     </div>
   );
 };
 
-export default WorkBusinessNeeds;
+export default MainSectionContainer;

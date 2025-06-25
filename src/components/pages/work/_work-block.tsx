@@ -1,4 +1,4 @@
-import WorkBusinessNeeds from "./work-business-needs";
+import MainSectionContainer from "./main-section-container";
 import WorkHero from "./work-hero";
 import WorkHeroBottomSection from "./work-hero-bottom-section";
 
@@ -7,7 +7,7 @@ const WorkBlock = () => {
     <div>
       <WorkHero />
       <WorkHeroBottomSection />
-      <WorkBusinessNeeds />
+      <MainSectionContainer />
     </div>
   );
 };

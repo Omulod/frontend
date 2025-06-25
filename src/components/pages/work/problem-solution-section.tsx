@@ -1,3 +1,42 @@
+import ProblemSolutionCard from "@/components/common/cards/problem-solution-card";
+import { cn } from "@/helpers/cn";
+
+const data = [
+  {
+    problem:
+      "Low engagement due to confusing audio workflow and complex production interface",
+    solution:
+      "We redesigned the entire production experience with intuitive drag-and-drop functionality, visual waveforms, and simplified the workflow to just 3 main steps.",
+  },
+  {
+    problem:
+      "Unusable mobile experience due to lack of collaboration tools and outdated brand identity",
+    solution:
+      "We introduced a new mobile app with a modern design, built-in collaboration tools, and a fresh brand identity.",
+  },
+  {
+    problem: "Lack of collaboration tools and outdated brand identity",
+    solution:
+      "We introduced a new mobile app with a modern design, built-in collaboration tools, and a fresh brand identity.",
+  },
+  {
+    problem:
+      "Poor mobile experience causing 60% of music producers to abandon the platform",
+    solution:
+      "We introduced a new mobile app with a modern design, built-in collaboration tools, and a fresh brand identity.",
+  },
+  {
+    problem: "Lack of collaboration tools and outdated brand identity",
+    solution:
+      "We introduced a new mobile app with a modern design, built-in collaboration tools, and a fresh brand identity.",
+  },
+  {
+    problem: "Lack of collaboration tools and outdated brand identity",
+    solution:
+      "We introduced a new mobile app with a modern design, built-in collaboration tools, and a fresh brand identity.",
+  },
+];
+
 const ProblemSolutionSection = () => {
   return (
     <div id="problems-solutions">
@@ -10,6 +49,20 @@ const ProblemSolutionSection = () => {
           The existing user experience was inconsistent, and their competitors
           were rapidly capturing market share.
         </p>
+        <div className="grid grid-cols-6 gap-6 mt-10">
+          {data.map((item, index) => (
+            <ProblemSolutionCard
+              key={index}
+              problem={item.problem}
+              solution={item.solution}
+              className={cn({
+                "col-span-2": index <= 2,
+                "col-span-3": index > 2 && index <= 4,
+                "col-span-6": index > 4,
+              })}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
