@@ -28,7 +28,7 @@ const DesignProcessSlider = ({ className }: { className?: string }) => {
     <div>
       <div className={cn("relative h-full", className)}>
         <Swiper
-          slidesPerView={5}
+          slidesPerView={1}
           spaceBetween={32}
           modules={[Navigation, Autoplay]}
           loop={true}

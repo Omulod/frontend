@@ -49,16 +49,16 @@ const ProblemSolutionSection = () => {
           The existing user experience was inconsistent, and their competitors
           were rapidly capturing market share.
         </p>
-        <div className="grid grid-cols-6 gap-6 mt-10">
+        <div className="grid lg:grid-cols-6 gap-6 mt-10">
           {data.map((item, index) => (
             <ProblemSolutionCard
               key={index}
               problem={item.problem}
               solution={item.solution}
               className={cn({
-                "col-span-2": index <= 2,
-                "col-span-3": index > 2 && index <= 4,
-                "col-span-6": index > 4,
+                "lg:col-span-2": index <= 2,
+                "lg:col-span-3": index > 2 && index <= 4,
+                "lg:col-span-6": index > 4,
               })}
             />
           ))}

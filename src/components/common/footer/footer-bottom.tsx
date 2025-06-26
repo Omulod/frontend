@@ -28,12 +28,12 @@ const FooterBottom = () => {
       />
       <div className="flex flex-wrap items-center gap-3 md:gap-6 justify-between">
         <p>© 2025 omulod ltd. All rights reserved.</p>
-        <div className="flex items-center gap-0.5">
+        <div className="flex md:items-center flex-col md:flex-row gap-0.5">
           {links.map((item, index) => (
             <Link
               key={index}
               href={item.href}
-              className="text-primary-500 hover:text-primary-400 border-r-2 px-1.5 border-neutral-200 last:border-none leading-none"
+              className="text-primary-500 hover:text-primary-400 md:border-r-2 px-1.5 border-neutral-200 last:border-none leading-none"
             >
               {item.title}
             </Link>

@@ -108,7 +108,7 @@ const WebsitePlanDetails = () => {
       </div>
 
       {/* Pricing Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-12">
         {getCurrentPlans().map((plan) => (
           <PricingCard
             key={plan.id}

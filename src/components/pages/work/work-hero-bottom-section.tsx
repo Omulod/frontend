@@ -94,7 +94,7 @@ const WorkHeroBottomSection = () => {
         </div>
       </div>
       <div className="bg-neutral-800">
-        <div className="container flex items-center py-5 justify-between my-14">
+        <div className="container flex lg:items-center flex-col lg:flex-row py-5 justify-between my-14 gap-y-8">
           {keyFeatures.map((feature) => (
             <div key={feature.id}>
               <p className="uppercase font-extrabold text-xs text-primary-500">

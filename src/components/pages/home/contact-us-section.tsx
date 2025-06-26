@@ -35,12 +35,14 @@ const ContactUsSection = () => {
         />
 
         <div className="mt-14 p-2.5 rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary w-fit flex items-center gap-6">
-          <Button size="small" className="px-16">
+          <Button size="small" className="lg:px-16">
             Request a quote
           </Button>
           <Button
             size="small"
-            className={cn("px-20 bg-transparent shadow-none hover:shadow-none")}
+            className={cn(
+              "lg:px-20 bg-transparent shadow-none hover:shadow-none"
+            )}
           >
             Book a call
           </Button>

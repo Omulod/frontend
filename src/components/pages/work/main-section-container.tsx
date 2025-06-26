@@ -28,6 +28,7 @@ const tabLinks = [
 
 const MainSectionContainer = () => {
   const [activeHash, setActiveHash] = useState<string>("#overview");
+  const [isUserScrolling, setIsUserScrolling] = useState(false);
 
   // Update hash when URL changes
   useEffect(() => {
@@ -44,6 +45,61 @@ const MainSectionContainer = () => {
     };
   }, []);
 
+  // Intersection Observer to detect which section is in view
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px", // Adjust these margins to control when sections become active
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      // Only update active section if user is not currently clicking/navigating
+      if (isUserScrolling) return;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const hash = `#${id}`;
+
+          // Update active hash without changing URL
+          setActiveHash(hash);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    // Observe all sections
+    const sectionIds = tabLinks.map((link) => link.href.substring(1));
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    // Special handling for overview section (top of page)
+    const handleScroll = () => {
+      if (isUserScrolling) return;
+
+      if (window.scrollY < 200) {
+        // Increased threshold for overview
+        setActiveHash("#overview");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isUserScrolling]);
+
   // Handle smooth scrolling with better control
   const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -51,7 +107,10 @@ const MainSectionContainer = () => {
   ) => {
     e.preventDefault();
 
-    // Update URL
+    // Set flag to prevent scroll listener from interfering
+    setIsUserScrolling(true);
+
+    // Update URL and active state immediately
     window.history.pushState(null, "", href);
     setActiveHash(href);
 
@@ -79,12 +138,17 @@ const MainSectionContainer = () => {
         });
       }
     }
+
+    // Reset the flag after scroll animation completes
+    setTimeout(() => {
+      setIsUserScrolling(false);
+    }, 1000); // Adjust timing based on your scroll animation duration
   };
 
   return (
     <div className="py-14 relative bg-neutral-900">
-      <div className="container grid grid-cols-12 gap-8">
-        <div className="col-span-3 bg-neutral-0/5 p-8 rounded-3xl sticky top-8 self-start">
+      <div className="container grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="lg:col-span-3 bg-neutral-0/5 p-8 rounded-3xl lg:sticky top-8 self-start">
           <div className="flex flex-col gap-3.5">
             {tabLinks.map((item, index) => (
               <Link
@@ -104,7 +168,7 @@ const MainSectionContainer = () => {
             ))}
           </div>
         </div>
-        <div className="col-span-9 flex flex-col gap-10">
+        <div className="lg:col-span-9 flex flex-col gap-10">
           <BusinessNeedsSection />
           <ChallengeSection />
           <ProblemSolutionSection />

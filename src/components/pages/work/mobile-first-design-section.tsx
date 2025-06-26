@@ -42,7 +42,7 @@ const MobileFirstDesignSection = () => {
       <div className="mt-8 rounded-3xl border border-neutral-500 p-8">
         <div className={cn("relative h-full")}>
           <Swiper
-            slidesPerView={5}
+            slidesPerView={1}
             spaceBetween={32}
             modules={[Navigation, Autoplay]}
             loop={true}
@@ -74,7 +74,7 @@ const MobileFirstDesignSection = () => {
                       height={575}
                       width={265}
                       alt="mobile-image"
-                      className="w-full rounded-3xl"
+                      className="w-full h-[180px] lg:h-[575px] object-scale-down rounded-3xl"
                     />
                   ))}
                 </div>

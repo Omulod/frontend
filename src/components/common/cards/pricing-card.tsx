@@ -32,7 +32,7 @@ const PricingCard = ({
     <div
       key={plan.id}
       className={cn(
-        "border border-neutral-500 rounded-3xl overflow-clip p-8 relative group",
+        "border border-neutral-500 rounded-3xl lg:overflow-clip p-8 relative group",
         plan.isPopular && "border-primary-900"
       )}
     >
