@@ -60,8 +60,6 @@ const TrustedSectionSlider = ({ className }: { className?: string }) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  console.log("activeIndex", activeIndex);
-
   return (
     <div className={cn("relative h-full", className)}>
       <Swiper

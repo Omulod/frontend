@@ -15,7 +15,6 @@ export interface IPricingPlan {
   team: string;
   features: IFeature[];
   buttonText: string;
-  buttonAction: string;
 }
 
 export interface IFeature {
@@ -40,9 +39,9 @@ export interface IBillingPeriod {
 
 // Billing periods
 export const billingPeriods: IBillingPeriod[] = [
-  { id: "monthly", label: "Monthly" },
-  { id: "quarterly", label: "Quarterly", discount: "10%" },
-  { id: "yearly", label: "Yearly", badge: "1 month free" },
+  { id: "Monthly", label: "Monthly" },
+  { id: "Quarterly", label: "Quarterly", discount: "10%" },
+  { id: "Yearly", label: "Yearly", badge: "1 month free" },
 ];
 
 // Format price helper
@@ -94,7 +93,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Add-on Pages", included: true, additionalInfo: "£19/page" },
         ],
         buttonText: "Start Team",
-        buttonAction: "start",
       },
       {
         id: "website-pro",
@@ -115,7 +113,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Add-on Pages", included: true, additionalInfo: "£15/page" },
         ],
         buttonText: "Scale up",
-        buttonAction: "scale",
       },
       {
         id: "website-enterprise",
@@ -136,7 +133,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Add-on Pages", included: true, additionalInfo: "Included" },
         ],
         buttonText: "Contact sales",
-        buttonAction: "contact",
       },
     ],
   },
@@ -161,7 +157,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Technical Architecture", included: false },
         ],
         buttonText: "Get Started",
-        buttonAction: "start",
       },
       {
         id: "dedicated-growth",
@@ -181,7 +176,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Technical Architecture", included: true },
         ],
         buttonText: "Scale Team",
-        buttonAction: "scale",
       },
       {
         id: "dedicated-enterprise",
@@ -201,7 +195,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Technical Architecture", included: true },
         ],
         buttonText: "Contact Sales",
-        buttonAction: "contact",
       },
     ],
   },
@@ -226,7 +219,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Design Consulting", included: false },
         ],
         buttonText: "Start Designing",
-        buttonAction: "start",
       },
       {
         id: "design-professional",
@@ -246,7 +238,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Unlimited Revisions", included: true },
         ],
         buttonText: "Go Professional",
-        buttonAction: "scale",
       },
       {
         id: "design-enterprise",
@@ -266,7 +257,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Priority Support", included: true },
         ],
         buttonText: "Contact Sales",
-        buttonAction: "contact",
       },
     ],
   },
@@ -291,7 +281,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "24/7 Monitoring", included: false },
         ],
         buttonText: "Start Building",
-        buttonAction: "start",
       },
       {
         id: "dev-scale",
@@ -311,7 +300,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "Load Balancing", included: true },
         ],
         buttonText: "Scale Development",
-        buttonAction: "scale",
       },
       {
         id: "dev-enterprise",
@@ -331,7 +319,6 @@ export const pricingTabs: ITeamTab[] = [
           { name: "SLA Guarantees", included: true },
         ],
         buttonText: "Contact Sales",
-        buttonAction: "contact",
       },
     ],
   },
