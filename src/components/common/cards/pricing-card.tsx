@@ -32,7 +32,7 @@ const PricingCard = ({
     <div
       key={plan.id}
       className={cn(
-        "border border-neutral-500 rounded-3xl lg:overflow-clip p-8 relative group",
+        "border border-neutral-500 rounded-3xl p-8 relative group",
         plan.isPopular && "border-primary-900"
       )}
     >
@@ -41,7 +41,7 @@ const PricingCard = ({
         width={1640}
         height={570}
         alt="hover-gradiant"
-        className="absolute left-0 right-0 -bottom-5 opacity-0 group-hover:opacity-100 transition-all duration-300"
+        className="absolute left-0 right-0 -bottom-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-300"
       />
       {plan.isPopular && (
         <div className="absolute bg-primary-500 -top-5 right-10 rounded-lg text-primary-900 flex items-center gap-2 font-bold py-2 px-3.5">
