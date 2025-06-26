@@ -11,6 +11,7 @@ import DesignProcessSection from "./design-process-section";
 import MobileFirstDesignSection from "./mobile-first-design-section";
 import DevelopmentSection from "./development-section";
 import ResultMetricsSection from "./result-metrics-section";
+import ClientReviewSection from "./client-review-section";
 
 const tabLinks = [
   { title: "Overview", href: "#overview" },
@@ -112,6 +113,7 @@ const MainSectionContainer = () => {
           <MobileFirstDesignSection />
           <DevelopmentSection />
           <ResultMetricsSection />
+          <ClientReviewSection />
         </div>
       </div>
     </div>
