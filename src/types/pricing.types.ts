@@ -1,7 +1,6 @@
 export interface IPricingData {
   id: number;
   title: string;
-  categories: boolean;
   meta: IMeta;
 }
 
@@ -9,13 +8,18 @@ export interface IMeta {
   pricing_title: string;
   pricing_moto: string;
   pricing_details: IPricingDetail[];
-  button_text: null;
 }
 
 export interface IPricingDetail {
   _type: string;
-  pricing_details_type: "Monthly" | "Quarterly" | "Yearly";
-  plan_type: string;
+  pricing_details_type: "Monthly" | "Yearly" | "Quarterly";
+  plan_offer: string;
+  plans: IPlan[];
+}
+
+export interface IPlan {
+  _type: string;
+  plan_name: string;
   gbp_pricing_details: IGbpPricingDetail[];
   usd_pricing_details: IUsdPricingDetail[];
   price_subtext: string;

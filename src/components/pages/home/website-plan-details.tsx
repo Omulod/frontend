@@ -10,7 +10,7 @@ import { IPricingData } from "@/types/pricing.types";
 const WebsitePlanDetails = () => {
   // State management
   const [activeTabId, setActiveTabId] = useState(1);
-  const [billingPeriod, setBillingPeriod] = useState<string>("quarterly");
+  const [billingPeriod, setBillingPeriod] = useState<string>("Monthly");
   const [currency, setCurrency] = useState<"GBP" | "USD">("GBP");
 
   // Event handlers
@@ -26,27 +26,25 @@ const WebsitePlanDetails = () => {
     setCurrency(curr);
   };
 
-  // Helper functions
-
   const getCurrentPlans = ({ billingPeriod }: { billingPeriod: string }) => {
-    return apiPlansData
-      .find((plan) => plan.id === activeTabId)
-      ?.meta.pricing_details.filter(
-        (detail) => detail.pricing_details_type === billingPeriod
-      );
+    const pricingDetails = apiPlansData.find((plan) => plan.id === activeTabId)
+      ?.meta.pricing_details;
+
+    return pricingDetails?.find(
+      (detail) => detail.pricing_details_type === billingPeriod
+    );
   };
 
   const [apiPlansData, setApiPlansData] = useState<IPricingData[] | []>([]);
+  console.log(apiPlansData);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/omulod/pricing_plans`
-        );
+        const response = await fetch("/api/pricing-plans");
         const data = await response.json();
-        setApiPlansData(data?.data);
-        setActiveTabId((data?.data as IPricingData[])[0]?.id);
+        setApiPlansData(data);
+        setActiveTabId((data as IPricingData[])[0].id);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -135,34 +133,13 @@ const WebsitePlanDetails = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-12">
         {getCurrentPlans({
           billingPeriod,
-        })?.map((plan, index) => (
+        })?.plans.map((plan, index) => (
           <PricingCard
             key={index}
             billingPeriod={billingPeriod}
             currency={currency}
             onButtonClick={(plan) => console.log(plan)}
-            plan={{
-              buttonText: plan.pricing_button_text,
-              description: plan.price_subtext,
-              features: plan.features.map((feature) => {
-                return {
-                  name: feature.feature_name,
-                  included: feature.is_feature_available,
-                  additionalInfo: feature.add_on_text,
-                  value: "",
-                };
-              }),
-              id: "12",
-              name: plan.plan_type,
-              pricing: {
-                monthly: 120,
-                quarterly: 120,
-                yearly: 120,
-              },
-              team: "No team",
-              isCustom: false,
-              isPopular: false,
-            }}
+            plan={plan}
           />
         ))}
       </div>
