@@ -1,3 +1,4 @@
+import { ISiteSettings } from "@/types/common.types";
 import ContactUsSection from "./contact-us-section";
 import FaqSection from "./faq-section";
 import FeaturedWorkSection from "./featured-work-section";
@@ -9,10 +10,14 @@ import TeamBehindSection from "./team-behind-section";
 import TrustedSection from "./trusted-section";
 import WebsitePlanSection from "./website-plan-section";
 
-const HomeBlock = () => {
+const HomeBlock = ({
+  siteSettings,
+}: {
+  siteSettings: ISiteSettings | null;
+}) => {
   return (
     <>
-      <HomeHero />
+      <HomeHero siteSettings={siteSettings} />
       <HeroSlider />
       <TeamBehindSection />
       <div className="bg-gradient-to-b from-neutral-900 relative z-50 to-neutral-50/10">
