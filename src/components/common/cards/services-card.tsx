@@ -9,12 +9,14 @@ import { useState } from "react";
 
 interface IServicesCardProps extends IServicePoint {
   iconUrl?: string;
+  buttonText?: string;
   isActive?: boolean;
   className?: string;
 }
 const ServicesCard = ({
   title,
   subtitle,
+  buttonText,
   iconUrl,
   points,
   isActive = false,
@@ -61,7 +63,7 @@ const ServicesCard = ({
           ))}
         </ul>
         <Button intent="secondary" className="mt-6 w-full">
-          Get a quote
+          {buttonText || "Get a quote"}
         </Button>
       </div>
     </div>

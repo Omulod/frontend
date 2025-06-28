@@ -26,6 +26,7 @@ export interface IServiceDetail {
 export interface IServiceCategoryItem {
   _type: string;
   item_title: string;
+  item_subtitle: string;
   item_icon: string;
   item_features: IItemFeature[];
   item_button: string;
