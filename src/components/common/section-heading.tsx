@@ -19,7 +19,7 @@ const SectionHeading = ({
     <div className={cn("flex flex-col gap-4", className)}>
       <p
         className={cn(
-          "text-xl text-primary-500 font-semibold",
+          "text-xl text-primary-500 font-semibold uppercase",
           subtitleClassName
         )}
       >

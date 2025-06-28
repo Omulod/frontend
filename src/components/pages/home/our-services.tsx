@@ -138,9 +138,9 @@ const OurServices = () => {
         <SectionHeading
           subtitle="Our Services"
           title="Choose your path to success with our comprehensive service offerings"
-          className="mb-4"
+          className="max-w-[804px] mb-4"
         />
-        <p className="italic">For Startups, SaaS Teams & Global Brands</p>
+        <p>For Startups, SaaS Teams & Global Brands</p>
 
         <div className="mt-14 flex flex-col gap-10">
           {servicesData.map((item, serviceindex) => (
