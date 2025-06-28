@@ -2,18 +2,20 @@
 import Button from "@/components/ui/button";
 import ArrowDownIcon from "@/components/ui/icons/arrow-down-icon";
 import CheckIcon from "@/components/ui/icons/check-icon";
-import OmulodIcon from "@/components/ui/icons/omulod-icon";
 import { cn } from "@/helpers/cn";
 import { IServicePoint } from "@/types/common.types";
+import Image from "next/image";
 import { useState } from "react";
 
 interface IServicesCardProps extends IServicePoint {
+  iconUrl?: string;
   isActive?: boolean;
   className?: string;
 }
 const ServicesCard = ({
   title,
   subtitle,
+  iconUrl,
   points,
   isActive = false,
   className,
@@ -22,8 +24,14 @@ const ServicesCard = ({
 
   return (
     <div className={cn("p-8 rounded-3xl border border-neutral-500", className)}>
-      <div className="flex items-center gap-2">
-        <OmulodIcon size={56} />
+      <div className="flex items-center gap-4">
+        <Image
+          src={iconUrl || ""}
+          width={56}
+          height={56}
+          alt={title}
+          className="object-cover w-10 h-10 lg:w-14 lg:h-14"
+        />
         <h4>{title}</h4>
       </div>
       <p className="mt-6 mb-9">{subtitle}</p>
