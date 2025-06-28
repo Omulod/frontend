@@ -1,11 +1,13 @@
 import {} from "@/components/pages/home/website-plan-data.helper";
 import Button from "@/components/ui/button";
+import CalButton from "@/components/ui/cal-button";
 import CheckIcon from "@/components/ui/icons/check-icon";
 import CrossIcon from "@/components/ui/icons/cross-icon";
 import CrownIcon from "@/components/ui/icons/crown-icon";
 import { cn } from "@/helpers/cn";
 import { IPlan } from "@/types/pricing.types";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IPricingCardProps {
   plan?: IPlan;
@@ -81,9 +83,27 @@ const PricingCard = ({
         ))}
       </div>
 
-      <Button className="w-full" intent="secondary" onClick={handleButtonClick}>
-        {plan?.pricing_button_text || "Select Plan"}
-      </Button>
+      {plan?.pricing_button_link ? (
+        <Link
+          href={plan?.pricing_button_link}
+          target="_blank"
+          rel="noreferrer"
+          className="w-full"
+        >
+          <Button
+            className="w-full"
+            intent="secondary"
+            onClick={handleButtonClick}
+          >
+            {plan?.pricing_button_text || "Select Plan"}
+          </Button>
+        </Link>
+      ) : (
+        <CalButton
+          buttonText={plan?.pricing_button_text || "Select Plan"}
+          className="w-full"
+        />
+      )}
     </div>
   );
 };

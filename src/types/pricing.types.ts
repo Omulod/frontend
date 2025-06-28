@@ -26,6 +26,7 @@ export interface IPlan {
   pricing_plan_custom_text: string;
   features: IFeature[];
   pricing_button_text: string;
+  pricing_button_link: string;
   is_featured: boolean;
 }
 

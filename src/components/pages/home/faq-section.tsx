@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const FaqSection = ({ faqsData }: { faqsData: IFaqData[] }) => {
   return (
-    <section id="faqs" className="overflow-x-clip mt-28">
+    <section id="faqs" className="overflow-x-clip mt-28 pb-20">
       <div className="container">
         <SectionHeading
           subtitle="FAQs"

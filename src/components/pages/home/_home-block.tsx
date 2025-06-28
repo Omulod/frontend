@@ -30,14 +30,14 @@ const HomeBlock = async ({
       <HomeHero siteSettings={siteSettings} />
       <HeroSlider />
       <TeamBehindSection siteSettings={siteSettings} />
-      <div className="bg-gradient-to-b from-neutral-900 relative z-50 to-neutral-50/10">
+      <div className="bg-surface-black-01">
         <TrustedSection />
         <IndustryExpertiseSection />
       </div>
       <FeaturedWorkSection />
       <OurServices servicesData={serviceData} />
       <FaqSection faqsData={faqsData?.data} />
-      <div className="bg-gradient-to-b from-neutral-50/10 via-neutral-900 to-neutral-50/10">
+      <div className="bg-surface-black-01">
         <WebsitePlanSection />
         <ContactUsSection />
       </div>

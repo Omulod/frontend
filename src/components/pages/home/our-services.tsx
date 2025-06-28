@@ -17,10 +17,7 @@ const OurServices = ({
   }, []);
 
   return (
-    <section
-      id="services"
-      className="bg-gradient-to-t from-neutral-700/70 via-neutral-900 to-neutral-700/70 py-28"
-    >
+    <section id="services" className="bg-surface-black-01 py-28">
       <div className="container">
         <SectionHeading
           subtitle="Our Services"
