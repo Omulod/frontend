@@ -39,7 +39,7 @@ const MobileFirstDesignSection = () => {
   return (
     <div id="mobile-first-design">
       <h3 className="uppercase">Mobile-First Design</h3>
-      <div className="mt-8 rounded-3xl border border-neutral-500 p-8">
+      <div className="mt-8 rounded-3xl border border-surface-border p-8">
         <div className={cn("relative h-full")}>
           <Swiper
             slidesPerView={1}

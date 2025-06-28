@@ -54,7 +54,7 @@ const TrustedSection = () => {
 
       <div className="overflow-clip">
         <div className="container grid grid-cols-1 lg:grid-cols-12 gap-y-10 mt-14">
-          <div className="border lg:border-r-0 border-neutral-500 rounded-3xl lg:rounded-r-none p-8 col-span-1 lg:col-span-4 xl:col-span-3">
+          <div className="border lg:border-r-0 border-surface-border rounded-3xl lg:rounded-r-none p-8 col-span-1 lg:col-span-4 xl:col-span-3">
             <h4>Reviews</h4>
             <p className="mt-2 text-neutral-40">
               Highly rated across multiple platforms
@@ -80,7 +80,7 @@ const TrustedSection = () => {
           </div>
 
           <div className="col-span-1 lg:col-span-8 xl:col-span-9 relative z-[100]">
-            <div className="border border-neutral-500 h-full lg:absolute left-0 top-0 lg:w-screen">
+            <div className="border border-surface-border h-full lg:absolute left-0 top-0 lg:w-screen">
               <TrustedSectionSlider />
             </div>
           </div>

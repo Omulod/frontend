@@ -39,7 +39,7 @@ const OurServices = ({
           {servicesData.map((item) => (
             <button
               key={item.id}
-              className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px]"
+              className="relative px-4 lg:px-10 min-w-[200px] cursor-pointer py-2 font-semibold rounded-[100px]"
               onClick={() => setActiveTab(item)}
             >
               <span

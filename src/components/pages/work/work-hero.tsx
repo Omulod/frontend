@@ -17,7 +17,7 @@ const WorkHero = () => {
           conversions by 2.3x within 90 days.
         </p>
 
-        <div className="mt-15 border rounded-3xl p-8 border-neutral-500 bg-neutral-900">
+        <div className="mt-15 border rounded-3xl p-8 border-surface-border bg-neutral-900">
           <Image
             src="/images/feature-image.png"
             width={1527}

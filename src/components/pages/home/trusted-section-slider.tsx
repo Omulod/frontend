@@ -106,7 +106,7 @@ const TrustedSectionSlider = ({ className }: { className?: string }) => {
             <ReviewCard
               {...item}
               className={cn(
-                "border-r border-neutral-500 hover:bg-gradient-to-t hover:from-primary-500/20 hover:to-neutral-900/10 transition-all cursor-grab",
+                "border-r border-surface-border hover:bg-gradient-to-t hover:from-primary-500/20 hover:to-neutral-900/10 transition-all cursor-grab",
                 {
                   // "bg-gradient-to-t from-primary-500/20 to-neutral-900/10":
                   //   activeIndex === index,

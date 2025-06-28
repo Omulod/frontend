@@ -26,7 +26,7 @@ const ReviewCard = ({
         className
       )}
     >
-      <div className="border-b pb-6 border-neutral-500">
+      <div className="border-b pb-6 border-surface-border">
         <Image
           src={companyLogo}
           width={100}
@@ -44,7 +44,7 @@ const ReviewCard = ({
             width={100}
             height={100}
             alt="person-image"
-            className="object-scale-down rounded-full border border-neutral-500 h-14 w-14"
+            className="object-scale-down rounded-full border border-surface-border h-14 w-14"
           />
           <div>
             <p className="text-primary-500 font-medium">{name}</p>

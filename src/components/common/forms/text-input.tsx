@@ -72,7 +72,7 @@ const TextInput = forwardRef<HTMLInputElement, TextFieldParams>(
             {...inputParams}
             placeholder={required ? `${placeholder} *` : placeholder}
             className={cn(
-              "w-full border-b border-neutral-500 bg-transparent py-3 leading-none transition duration-200 ease-in-out [appearance:textfield] placeholder:text-neutral-400 focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none peer",
+              "w-full border-b border-surface-border bg-transparent py-3 leading-none transition duration-200 ease-in-out [appearance:textfield] placeholder:text-neutral-400 focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none peer",
               {
                 "pr-10": type === "password",
                 "border-[#F04438]": error,

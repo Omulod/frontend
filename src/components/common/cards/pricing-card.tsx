@@ -29,7 +29,7 @@ const PricingCard = ({
   return (
     <div
       className={cn(
-        "border border-neutral-500 rounded-3xl p-8 relative group",
+        "border border-surface-border rounded-3xl p-8 relative group",
         plan?.is_featured && "border-primary-900"
       )}
     >
@@ -60,7 +60,7 @@ const PricingCard = ({
         <p className="line-clamp-1">{plan?.price_subtext}</p>
       </div>
 
-      <div className="space-y-3 my-8 pt-6 border-t border-neutral-500">
+      <div className="space-y-3 my-8 pt-6 border-t border-surface-border">
         {plan?.features.map((feature, index) => (
           <div key={index} className="flex items-center justify-between">
             <div className="flex items-center w-full justify-between gap-3">
@@ -82,7 +82,7 @@ const PricingCard = ({
       </div>
 
       <Button className="w-full" intent="secondary" onClick={handleButtonClick}>
-        {plan?.pricing_button_text}
+        {plan?.pricing_button_text || "Select Plan"}
       </Button>
     </div>
   );

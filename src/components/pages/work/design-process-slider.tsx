@@ -52,11 +52,11 @@ const DesignProcessSlider = ({ className }: { className?: string }) => {
         >
           {sliderItems.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="border border-neutral-500 grid grid-cols-2 rounded-2xl">
+              <div className="border border-surface-border grid grid-cols-2 rounded-2xl">
                 <TitleImageCard
                   title="Before - Original Design"
                   image={item.beforeImage}
-                  className="border-r border-neutral-500"
+                  className="border-r border-surface-border"
                 />
                 <TitleImageCard
                   title="After - New Design"

@@ -24,7 +24,7 @@ const FeaturedCard = ({
   return (
     <div
       className={cn(
-        "p-8 rounded-3xl bg-neutral-600/30 backdrop-blur-2xl border border-neutral-500 grid grid-cols-1 lg:grid-cols-12 gap-8",
+        "p-8 rounded-3xl bg-neutral-600/30 backdrop-blur-2xl border border-surface-border grid grid-cols-1 lg:grid-cols-12 gap-8",
         className
       )}
     >
@@ -34,7 +34,7 @@ const FeaturedCard = ({
           width={632}
           height={474}
           alt={title}
-          className="border border-neutral-500 rounded-3xl object-scale-down"
+          className="border border-surface-border rounded-3xl object-scale-down"
         />
         <Link href={`/work/${url}`}>
           <Button intent="secondary" size="large" className="mt-8 w-full">
@@ -62,15 +62,15 @@ const FeaturedCard = ({
         </div>
 
         {/* tech stack */}
-        <div className="border rounded-2xl border-neutral-500 mt-10 grid grid-cols-2">
+        <div className="border rounded-2xl border-surface-border mt-10 grid grid-cols-2">
           <div className="p-6">
-            <p className="border-b border-neutral-500 pb-2 pr-4 mb-3.5 text-sm font-bold">
+            <p className="border-b border-surface-border pb-2 pr-4 mb-3.5 text-sm font-bold">
               Tech Stack
             </p>
             <p>{techStack}</p>
           </div>
-          <div className="border-l p-6 border-neutral-500">
-            <p className="border-b border-neutral-500 pb-2 mb-3.5 text-sm font-bold">
+          <div className="border-l p-6 border-surface-border">
+            <p className="border-b border-surface-border pb-2 mb-3.5 text-sm font-bold">
               Timeline
             </p>
             <p>{timeline}</p>
@@ -78,8 +78,8 @@ const FeaturedCard = ({
         </div>
 
         {/* impact points */}
-        <div className="border rounded-2xl border-neutral-500 mt-8 p-6">
-          <p className="border-b border-neutral-500 pb-2 mb-3.5 text-sm font-bold">
+        <div className="border rounded-2xl border-surface-border mt-8 p-6">
+          <p className="border-b border-surface-border pb-2 mb-3.5 text-sm font-bold">
             {impactPoint.title}:
           </p>
           <div className="flex flex-col gap-3.5 mt-3.5">

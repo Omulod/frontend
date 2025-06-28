@@ -1,4 +1,4 @@
-import { ISiteSettings } from "@/types/common.types";
+import { IFaqData, ISiteSettings } from "@/types/common.types";
 import ContactUsSection from "./contact-us-section";
 import FaqSection from "./faq-section";
 import FeaturedWorkSection from "./featured-work-section";
@@ -17,8 +17,12 @@ const HomeBlock = async ({
 }: {
   siteSettings: ISiteSettings | null;
 }) => {
-  const { data } = await axios.get<IServicesData[]>(
+  const { data: serviceData } = await axios.get<IServicesData[]>(
     `${process.env.NEXT_PUBLIC_API_URL}/omulod/services`
+  );
+
+  const { data: faqsData } = await axios.get<{ data: IFaqData[] }>(
+    `${process.env.NEXT_PUBLIC_API_URL}/omulod/faqs`
   );
 
   return (
@@ -31,8 +35,8 @@ const HomeBlock = async ({
         <IndustryExpertiseSection />
       </div>
       <FeaturedWorkSection />
-      <OurServices servicesData={data} />
-      <FaqSection />
+      <OurServices servicesData={serviceData} />
+      <FaqSection faqsData={faqsData?.data} />
       <div className="bg-gradient-to-b from-neutral-50/10 via-neutral-900 to-neutral-50/10">
         <WebsitePlanSection />
         <ContactUsSection />

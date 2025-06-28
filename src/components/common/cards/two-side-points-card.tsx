@@ -15,9 +15,9 @@ const TwoSidePointsCard = ({
 }: ITwoSidePointsCardProps) => {
   return (
     <div>
-      <div className="mt-10 border border-neutral-500 rounded-2xl grid grid-cols-1 md:grid-cols-2">
-        <div className="p-4 md:border-r border-neutral-500">
-          <p className="border-b border-neutral-500 pb-4 mb-4 font-bold text-xs">
+      <div className="mt-10 border border-surface-border rounded-2xl grid grid-cols-1 md:grid-cols-2">
+        <div className="p-4 md:border-r border-surface-border">
+          <p className="border-b border-surface-border pb-4 mb-4 font-bold text-xs">
             {leftTitle}
           </p>
           <ul>
@@ -32,7 +32,7 @@ const TwoSidePointsCard = ({
           </ul>
         </div>
         <div className="p-4">
-          <p className="border-b border-neutral-500 pb-4 mb-4 font-bold text-xs">
+          <p className="border-b border-surface-border pb-4 mb-4 font-bold text-xs">
             {rightTitle}
           </p>
           <ul>

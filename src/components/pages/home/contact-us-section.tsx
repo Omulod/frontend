@@ -53,7 +53,7 @@ const ContactUsSection = () => {
 
         <ContactUsForm />
       </div>
-      <div className="lg:col-span-4 h-fit border border-neutral-500 rounded-2xl overflow-hidden">
+      <div className="lg:col-span-4 h-fit border border-surface-border rounded-2xl overflow-hidden">
         {contactUsData.map((item, index) => (
           <ContactCard
             key={index}

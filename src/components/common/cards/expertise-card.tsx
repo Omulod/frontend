@@ -19,16 +19,16 @@ const ExpertiseCard = ({
   return (
     <div
       className={cn(
-        "border border-neutral-500 rounded-3xl p-8 bg-neutral-900/5 backdrop-blur-md",
+        "border border-surface-border rounded-3xl p-8 bg-neutral-900/5 backdrop-blur-md",
         className
       )}
     >
       <OmulodIcon size={56} />
       <p className="py-2 text-3xl font-semibold">{title}</p>
       <p className="text-sm font-light">{subtitle}</p>
-      <div className="mt-10 border border-neutral-500 rounded-2xl grid grid-cols-1 md:grid-cols-2">
-        <div className="p-4 md:border-r border-neutral-500">
-          <p className="border-b border-neutral-500 pb-4 mb-4">
+      <div className="mt-10 border border-surface-border rounded-2xl grid grid-cols-1 md:grid-cols-2">
+        <div className="p-4 md:border-r border-surface-border">
+          <p className="border-b border-surface-border pb-4 mb-4">
             Key Pain Points We Fix
           </p>
           <ul>
@@ -43,7 +43,7 @@ const ExpertiseCard = ({
           </ul>
         </div>
         <div className="p-4">
-          <p className="border-b border-neutral-500 pb-4 mb-4">
+          <p className="border-b border-surface-border pb-4 mb-4">
             Our proven approach:
           </p>
           <ul>
