@@ -24,7 +24,7 @@ const reviewsPlatform = [
 
 const HomeHero = () => {
   return (
-    <section className="container lg:min-h-[700px] lg:h-[calc(100vh-188px)] grid grid-cols-1 lg:grid-cols-12 gap-8 md:pt-20 md:pb-16 pt-16 pb-16">
+    <section className="container lg:min-h-[700px] lg:h-[calc(100vh-188px)] grid grid-cols-1 lg:grid-cols-12 gap-8 py-16">
       <div className=" lg:col-span-7 my-auto">
         <h1>
           Global design & development agency helping you{" "}

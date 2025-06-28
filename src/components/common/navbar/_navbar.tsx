@@ -53,7 +53,7 @@ const Navbar = () => {
         width={1920}
         height={400}
         alt="nav-bg"
-        className="absolute top-0 left-1/2 -translate-x-1/2 -z-10"
+        className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full"
       />
       <div className="container py-6">
         {/* Desktop Layout */}
