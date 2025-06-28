@@ -27,7 +27,10 @@ const contactUsData = [
 
 const ContactUsSection = () => {
   return (
-    <div className="container py-28 grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <div
+      id="contact"
+      className="container py-28 grid grid-cols-1 lg:grid-cols-12 gap-6"
+    >
       <div className="lg:col-span-8">
         <SectionHeading
           subtitle="Contact Us"

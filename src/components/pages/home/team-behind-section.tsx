@@ -29,7 +29,7 @@ const stats = [
 ];
 const TeamBehindSection = () => {
   return (
-    <section className="container pt-28">
+    <section id="company" className="container pt-28">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <SectionHeading

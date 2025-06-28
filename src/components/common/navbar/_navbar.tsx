@@ -12,29 +12,34 @@ const navItems = [
     href: "/",
   },
   {
-    label: "Services",
-    href: "#services",
+    label: "Company",
+    href: "#company",
   },
   {
     label: "Works",
     href: "#works",
   },
   {
-    label: "Dedicated team",
-    href: "#dedicated-team",
+    label: "Services",
+    href: "#services",
+  },
+  {
+    label: "FAQs",
+    href: "#faqs",
   },
   {
     label: "Pricing",
     href: "#pricing",
   },
   {
-    label: "Company",
-    href: "#company",
+    label: "Contact",
+    href: "#contact",
   },
-  {
-    label: "Blog",
-    href: "#blog",
-  },
+
+  // {
+  //   label: "Blog",
+  //   href: "#blog",
+  // },
 ];
 
 const Navbar = () => {

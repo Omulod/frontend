@@ -24,15 +24,14 @@ const HomeHero = () => {
   return (
     <section className="container lg:min-h-[700px] lg:h-[calc(100vh-188px)] grid grid-cols-1 lg:grid-cols-12 gap-8 md:pt-20 md:pb-16 pt-16 pb-16">
       <div className=" lg:col-span-7 my-auto">
-        <h1 className="uppercase">
+        <h1>
           Global design & development agency helping you{" "}
           <span className="text-primary-500">simplify*</span> digital
           experiences
         </h1>
 
-        <p className="py-6 md:py-10 max-w-[650px] lg:max-w-[804px] uppercase text-base xl:text-xl font-semibold">
-          From idea to launch, omulod* is your full-service product design and
-          development partner — fast, flexible, and founder-friendly.
+        <p className="py-6 md:py-10 max-w-[650px] lg:max-w-[804px] capitalize text-base xl:text-3xl italic font-light">
+          Design. Build. Scale — Faster.
         </p>
 
         <div className="flex flex-wrap items-center gap-4">
