@@ -144,12 +144,13 @@ const faqItems: IFAQItem[] = [
 
 const FaqSection = () => {
   return (
-    <section className="overflow-x-clip mt-28">
+    <section id="faqs" className="overflow-x-clip mt-28">
       <div className="container">
         <SectionHeading
           subtitle="FAQs"
           title="We’ve Got You Covered"
           className="mb-4"
+          subtitleClassName="normal-case"
         />
         <p>
           Here are answers to the most common questions we get from founders and

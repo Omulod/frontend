@@ -2,7 +2,7 @@
 import ExpertiseCard from "@/components/common/cards/expertise-card";
 import { cn } from "@/helpers/cn";
 import "swiper/css";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const IndustryExpertiseSlider = ({ className }: { className?: string }) => {
@@ -57,12 +57,12 @@ const IndustryExpertiseSlider = ({ className }: { className?: string }) => {
       <Swiper
         slidesPerView={1}
         spaceBetween={32}
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation]}
         loop={true}
-        autoplay={{
-          delay: 2500,
-          pauseOnMouseEnter: true,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   pauseOnMouseEnter: true,
+        // }}
         onAfterInit={() => {
           //   setShowSliders(true);
         }}
@@ -91,7 +91,7 @@ const IndustryExpertiseSlider = ({ className }: { className?: string }) => {
       >
         {sliderItems.map((item, index) => (
           <SwiperSlide key={index}>
-            <ExpertiseCard {...item} />
+            <ExpertiseCard {...item} className="cursor-grab" />
           </SwiperSlide>
         ))}
       </Swiper>

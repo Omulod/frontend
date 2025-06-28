@@ -1,10 +1,12 @@
 import OmulodIcon from "@/components/ui/icons/omulod-icon";
+import { cn } from "@/helpers/cn";
 
 interface IExpertiseProps {
   title: string;
   subtitle: string;
   keyPainPoints: string[];
   approach: string[];
+  className?: string;
 }
 
 const ExpertiseCard = ({
@@ -12,9 +14,15 @@ const ExpertiseCard = ({
   subtitle,
   keyPainPoints,
   approach,
+  className,
 }: IExpertiseProps) => {
   return (
-    <div className="border border-neutral-500 rounded-3xl p-8 bg-neutral-900/5 backdrop-blur-md">
+    <div
+      className={cn(
+        "border border-neutral-500 rounded-3xl p-8 bg-neutral-900/5 backdrop-blur-md",
+        className
+      )}
+    >
       <OmulodIcon size={56} />
       <p className="py-2 text-3xl font-semibold">{title}</p>
       <p className="text-sm font-light">{subtitle}</p>

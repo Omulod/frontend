@@ -1,9 +1,8 @@
 "use client";
 import ReviewCard from "@/components/common/cards/review-card";
 import { cn } from "@/helpers/cn";
-import { useState } from "react";
 import "swiper/css";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const TrustedSectionSlider = ({ className }: { className?: string }) => {
@@ -58,28 +57,24 @@ const TrustedSectionSlider = ({ className }: { className?: string }) => {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  // const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className={cn("relative h-full", className)}>
       <Swiper
         slidesPerView={1}
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation]}
         loop={true}
-        autoplay={{
-          delay: 2500,
-          pauseOnMouseEnter: true,
-        }}
         navigation={{
           prevEl: "#trustedSliderPrev",
           nextEl: "#trustedSliderNext",
         }}
-        onSlideChange={(swiper) => {
-          if (swiper.realIndex === sliderItems.length - 1) {
-            setActiveIndex(0);
-          } else {
-            setActiveIndex(swiper.realIndex + 1);
-          }
+        onSlideChange={() => {
+          // if (swiper.realIndex === sliderItems.length - 1) {
+          //   setActiveIndex(0);
+          // } else {
+          //   setActiveIndex(swiper.realIndex + 1);
+          // }
         }}
         breakpoints={{
           768: {
@@ -110,10 +105,13 @@ const TrustedSectionSlider = ({ className }: { className?: string }) => {
           <SwiperSlide key={index}>
             <ReviewCard
               {...item}
-              className={cn("border-r border-neutral-500", {
-                "bg-gradient-to-t from-primary-500/20 to-neutral-900/10":
-                  activeIndex === index,
-              })}
+              className={cn(
+                "border-r border-neutral-500 hover:bg-gradient-to-t hover:from-primary-500/20 hover:to-neutral-900/10 transition-all cursor-grab",
+                {
+                  // "bg-gradient-to-t from-primary-500/20 to-neutral-900/10":
+                  //   activeIndex === index,
+                }
+              )}
             />
           </SwiperSlide>
         ))}

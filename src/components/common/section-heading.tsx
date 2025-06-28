@@ -25,7 +25,7 @@ const SectionHeading = ({
       >
         {subtitle}
       </p>
-      <h2 className={cn("uppercase", titleClassName)}>{title}</h2>
+      <h2 className={cn("", titleClassName)}>{title}</h2>
     </div>
   );
 };

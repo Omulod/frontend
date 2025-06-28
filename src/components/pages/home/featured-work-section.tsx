@@ -43,7 +43,7 @@ const featureData: IFeaturedWork[] = [
 
 const FeaturedWorkSection = () => {
   return (
-    <div className="container my-28">
+    <div id="works" className="container my-28">
       <div className="max-w-[943px]">
         <SectionHeading
           subtitle="FEATURED WORK"

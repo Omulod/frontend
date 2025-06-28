@@ -5,6 +5,7 @@ import WhatsappIcon from "@/components/ui/icons/whatsapp-icon";
 import { cn } from "@/helpers/cn";
 import Image from "next/image";
 import Link from "next/link";
+import LaunchAProjectBtn from "./launch-a-project-btn";
 
 const navItems = [
   {
@@ -12,29 +13,34 @@ const navItems = [
     href: "/",
   },
   {
-    label: "Services",
-    href: "#services",
+    label: "Company",
+    href: "#company",
   },
   {
     label: "Works",
     href: "#works",
   },
   {
-    label: "Dedicated team",
-    href: "#dedicated-team",
+    label: "Services",
+    href: "#services",
+  },
+  {
+    label: "FAQs",
+    href: "#faqs",
   },
   {
     label: "Pricing",
     href: "#pricing",
   },
   {
-    label: "Company",
-    href: "#company",
+    label: "Contact",
+    href: "#contact",
   },
-  {
-    label: "Blog",
-    href: "#blog",
-  },
+
+  // {
+  //   label: "Blog",
+  //   href: "#blog",
+  // },
 ];
 
 const Navbar = () => {
@@ -47,7 +53,7 @@ const Navbar = () => {
         width={1920}
         height={400}
         alt="nav-bg"
-        className="absolute top-0 left-1/2 -translate-x-1/2 -z-10"
+        className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full"
       />
       <div className="container py-6">
         {/* Desktop Layout */}
@@ -81,12 +87,15 @@ const Navbar = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button intent="secondary" size="small">
+            {/* <Button intent="secondary" size="small">
               Launch a project
-            </Button>
-            <Button intent="secondary" size="small" className="!p-2.5">
-              <WhatsappIcon />
-            </Button>
+            </Button> */}
+            <LaunchAProjectBtn />
+            <Link href="https://wa.me/+447438283469" target="_blank">
+              <Button intent="secondary" size="small" className="!p-2.5">
+                <WhatsappIcon />
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -145,9 +154,11 @@ const Navbar = () => {
 
             {/* Mobile Buttons */}
             <div className="border-t border-neutral-500 flex items-center gap-4 pt-4">
-              <Button intent="secondary" size="small">
+              {/* <Button intent="secondary" size="small">
                 Launch a project
-              </Button>
+              </Button> */}
+
+              <LaunchAProjectBtn />
               <Button intent="secondary" size="small" className="!p-2.5">
                 <WhatsappIcon />
               </Button>
