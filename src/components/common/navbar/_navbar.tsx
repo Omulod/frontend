@@ -84,9 +84,11 @@ const Navbar = () => {
             <Button intent="secondary" size="small">
               Launch a project
             </Button>
-            <Button intent="secondary" size="small" className="!p-2.5">
-              <WhatsappIcon />
-            </Button>
+            <Link href="https://wa.me/+447438283469" target="_blank">
+              <Button intent="secondary" size="small" className="!p-2.5">
+                <WhatsappIcon />
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Button */}
