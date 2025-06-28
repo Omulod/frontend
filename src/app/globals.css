@@ -88,6 +88,13 @@ html {
   --tw-color-neutral-800: #0d0d0d;
   --tw-color-neutral-900: #000000;
 
+  /* surface color palette */
+  --tw-color-surface-border-white: #e9e7e633;
+  --tw-color-surface-black-01: #0f0f0f;
+  --tw-color-surface-black-02: #1a1a1a;
+  --tw-color-surface-black-03: #ffffff03;
+  --tw-color-surface-gold: #c6974903;
+
   --tw-font-segoe: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
     "Roboto", "Helvetica Neue", Arial, sans-serif;
 
@@ -184,6 +191,12 @@ html {
   --color-neutral-700: var(--tw-color-neutral-700);
   --color-neutral-800: var(--tw-color-neutral-800);
   --color-neutral-900: var(--tw-color-neutral-900);
+
+  --color-surface-border: var(--tw-color-surface-border-white);
+  --color-surface-black-01: var(--tw-color-surface-black-01);
+  --color-surface-black-02: var(--tw-color-surface-black-02);
+  --color-surface-black-03: var(--tw-color-surface-black-03);
+  --color-surface-gold: var(--tw-color-surface-gold);
 
   --font-segoe: var(--tw-font-segoe);
 

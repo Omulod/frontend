@@ -47,7 +47,7 @@ const DevelopmentSlider = ({ className }: { className?: string }) => {
       >
         {sliderItems.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="border border-neutral-500 rounded-2xl">
+            <div className="border border-surface-border rounded-2xl">
               <TitleImageCard
                 title="Technical Implementation"
                 image={item.image}

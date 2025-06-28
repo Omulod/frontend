@@ -12,7 +12,7 @@ const TitleImageCard = ({
 }) => {
   return (
     <div className={cn("p-8", className)}>
-      <p className="text-sm mb-3.5 font-bold border-b border-neutral-500 pb-2">
+      <p className="text-sm mb-3.5 font-bold border-b border-surface-border pb-2">
         {title}
       </p>
       <Image

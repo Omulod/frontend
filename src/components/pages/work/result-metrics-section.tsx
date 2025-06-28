@@ -27,7 +27,7 @@ const ResultMetricsSection = () => {
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="p-8 rounded-3xl border border-neutral-500"
+            className="p-8 rounded-3xl border border-surface-border"
           >
             <div className="flex items-center gap-2">
               <div className="p-2.5 bg-neutral-700 rounded-lg">

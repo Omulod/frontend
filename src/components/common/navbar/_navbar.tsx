@@ -132,7 +132,7 @@ const Navbar = () => {
             isOpen ? "opacity-100 visible" : "opacity-0 invisible"
           )}
         >
-          <div className="container bg-neutral-900 py-6 px-4 space-y-6 border border-neutral-500 rounded-2xl">
+          <div className="container bg-neutral-900 py-6 px-4 space-y-6 border border-surface-border rounded-2xl">
             {/* Mobile Navigation Links */}
             <div className="space-y-4">
               {navItems.map((item) => (
@@ -153,7 +153,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Buttons */}
-            <div className="border-t border-neutral-500 flex items-center gap-4 pt-4">
+            <div className="border-t border-surface-border flex items-center gap-4 pt-4">
               {/* <Button intent="secondary" size="small">
                 Launch a project
               </Button> */}

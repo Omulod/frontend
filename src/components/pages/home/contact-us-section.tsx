@@ -1,7 +1,9 @@
+"use client";
 import ContactCard from "@/components/common/cards/contact-card";
 import SectionHeading from "@/components/common/section-heading";
-import Button from "@/components/ui/button";
 import { cn } from "@/helpers/cn";
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect, useState } from "react";
 import ContactUsForm from "./contact-us-form";
 
 const contactUsData = [
@@ -11,8 +13,8 @@ const contactUsData = [
     name: "Mosharrof Hossain",
     position: "Co-Founder & COO",
     email: "mosharrof@omulod.com",
-    facebook: "https://www.facebook.com/",
-    linkedin: "https://www.linkedin.com/",
+    facebook: "https://www.facebook.com/mosharrofuiux",
+    linkedin: "https://www.linkedin.com/in/mabfahad",
   },
   {
     title: "Have a project to discuss?",
@@ -20,12 +22,40 @@ const contactUsData = [
     name: "Fahad Abdullah",
     position: "Co-Founder & CTO",
     email: "fahad@omulod.com",
-    facebook: "https://www.facebook.com/",
-    linkedin: "https://www.linkedin.com/",
+    facebook: "https://www.facebook.com/fahad.abdullah42",
+    linkedin: "https://www.linkedin.com/in/mosharrofux",
+  },
+];
+
+const tabItems = [
+  {
+    id: 1,
+    title: "Request a Quote",
+  },
+  {
+    id: 2,
+    title: "Book a Call",
   },
 ];
 
 const ContactUsSection = () => {
+  const [activeTabId, setActiveTabId] = useState(1);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "30min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#000" },
+          dark: { "cal-brand": "#C69749" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <div
       id="contact"
@@ -37,23 +67,41 @@ const ContactUsSection = () => {
           title="Ready to share your vision? Let’s talk!"
         />
 
-        <div className="mt-14 p-2.5 rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary w-fit flex items-center gap-6">
-          <Button size="small" className="lg:px-16">
-            Request a quote
-          </Button>
-          <Button
-            size="small"
-            className={cn(
-              "lg:px-20 bg-transparent shadow-none hover:shadow-none"
-            )}
-          >
-            Book a call
-          </Button>
+        <div className="rounded-3xl lg:rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex flex-wrap items-center gap-6 p-2 w-fit my-14">
+          {tabItems.map((item) => (
+            <button
+              key={item.id}
+              className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px] w-[200px] whitespace-nowrap"
+              onClick={() => setActiveTabId(item.id)}
+            >
+              <span
+                className={cn(
+                  "absolute shadow-button backdrop-blur-3xl bg-primary-900 top-0 left-0 w-full h-full rounded-[100px] -z-10 transition-all duration-500",
+                  {
+                    "opacity-100": activeTabId === item.id,
+                    "opacity-0": activeTabId !== item.id,
+                  }
+                )}
+              />
+              {item.title}
+            </button>
+          ))}
         </div>
 
-        <ContactUsForm />
+        {activeTabId === 1 && <ContactUsForm />}
+
+        {activeTabId === 2 && (
+          <div className="border border-transparent">
+            <Cal
+              namespace="30min"
+              calLink="omulod/30min"
+              style={{ width: "100%", height: "100%", overflow: "scroll" }}
+              config={{ layout: "month_view", theme: "dark" }}
+            />
+          </div>
+        )}
       </div>
-      <div className="lg:col-span-4 h-fit border border-neutral-500 rounded-2xl overflow-hidden">
+      <div className="lg:col-span-4 h-fit border border-surface-border rounded-2xl overflow-hidden">
         {contactUsData.map((item, index) => (
           <ContactCard
             key={index}

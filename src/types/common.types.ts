@@ -80,3 +80,22 @@ export interface IStatisticsReport {
   obc_statistics_number: string;
   obc_statistics_description: string;
 }
+
+export interface IFaqData {
+  category_id: number;
+  category_name: string;
+  category_slug: string;
+  faqs: IFAQ[];
+}
+
+export interface IFAQ {
+  id: number;
+  question: string;
+  answer: string;
+  show_on_homepage: ShowOnHomepage;
+}
+
+export enum ShowOnHomepage {
+  No = "no",
+  Yes = "yes",
+}

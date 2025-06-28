@@ -4,7 +4,7 @@ const UiUxDesignSection = () => {
   return (
     <div id="ux-ui-design">
       <h3 className="uppercase">UI/UX Design</h3>
-      <div className="mt-8 rounded-3xl border border-neutral-500 p-8">
+      <div className="mt-8 rounded-3xl border border-surface-border p-8">
         <p>
           Despite having a strong vision for music production tools and initial
           funding, Zone Production lacked the technical execution and product

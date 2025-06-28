@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { cn } from "@/helpers/cn";
@@ -79,7 +80,7 @@ const WebsitePlanDetails = () => {
         </div>
 
         {/* Currency Selector */}
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <span>Currency:</span>
           <div className="rounded-[100px] bg-[#292929] backdrop-blur-3xl shadow-button-secondary p-1.5 flex ">
             {(["GBP", "USD"] as const).map((curr) => (
@@ -97,7 +98,7 @@ const WebsitePlanDetails = () => {
               </button>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Billing Period Selector */}

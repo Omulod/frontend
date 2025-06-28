@@ -26,7 +26,7 @@ const CeoCard = ({
   return (
     <div
       className={cn(
-        "bg-gradient-to-t from-primary-500/15 to-neutral-900/10 p-4 md:p-8 h-full flex flex-col backdrop-blur-md border border-neutral-500 rounded-3xl",
+        "bg-gradient-to-t from-primary-500/15 to-neutral-900/10 p-4 md:p-8 h-full flex flex-col backdrop-blur-md border border-surface-border rounded-3xl",
         className
       )}
     >

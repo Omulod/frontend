@@ -142,7 +142,7 @@ const ContactUsForm = () => {
                 "rounded-[50px] px-6 py-4 border transition-all cursor-pointer",
                 selectedBudget === option.value
                   ? "bg-primary-500 border-transparent"
-                  : "border-neutral-500 text-neutral-0 hover:bg-primary-500"
+                  : "border-surface-border text-neutral-0 hover:bg-primary-500"
               )}
             >
               {option.label}

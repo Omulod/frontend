@@ -4,6 +4,7 @@ import ArrowDownIcon from "@/components/ui/icons/arrow-down-icon";
 import { cn } from "@/helpers/cn";
 import { IAccordionItem } from "@/types/common.types";
 import React, { useState } from "react";
+import parse from "html-react-parser";
 
 type IAccordionProps = {
   items: IAccordionItem[];
@@ -60,7 +61,9 @@ const Accordion = ({ items, activeItem, className }: IAccordionProps) => {
               }
             )}
           >
-            <p className="pb-4 text-base">{item.content}</p>
+            <div className="pb-4 text-base [&_ul]:list-inside [&_ul_li]:list-disc">
+              {parse(item?.content || "")}
+            </div>
           </div>
         </div>
       ))}

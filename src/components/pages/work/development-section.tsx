@@ -6,7 +6,7 @@ const DevelopmentSection = () => {
   return (
     <div id="development">
       <h3 className="uppercase">Development</h3>
-      <div className="mt-8 rounded-3xl border border-neutral-500 p-8">
+      <div className="mt-8 rounded-3xl border border-surface-border p-8">
         <div>
           <TwoSidePointsCard
             leftPoints={[
@@ -37,7 +37,7 @@ const DevelopmentSection = () => {
         </div>
       </div>
 
-      <div className="mt-8 rounded-3xl border border-neutral-500 p-8">
+      <div className="mt-8 rounded-3xl border border-surface-border p-8">
         <DevelopmentSlider />
       </div>
     </div>

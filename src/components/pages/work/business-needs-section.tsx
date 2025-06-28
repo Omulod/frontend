@@ -19,7 +19,7 @@ const BusinessNeedsSection = () => {
   return (
     <div id="business-needs">
       <h3 className="uppercase">Business Needs</h3>
-      <div className="mt-8 rounded-3xl border border-neutral-500 p-8">
+      <div className="mt-8 rounded-3xl border border-surface-border p-8">
         <p>
           Zone Production approached us to create a comprehensive music
           production platform that could handle complex audio workflows, scale

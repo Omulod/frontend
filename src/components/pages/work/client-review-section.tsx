@@ -21,7 +21,7 @@ const ClientReviewSection = () => {
           — Alex Rodriguez, CEO at Zone Production
         </p>
       </div>
-      <div className="mt-8 rounded-3xl border border-neutral-500 p-8">
+      <div className="mt-8 rounded-3xl border border-surface-border p-8">
         <div className="flex items-center gap-4">
           <Image
             src="/images/ceo-pic.png"
