@@ -5,6 +5,7 @@ import WhatsappIcon from "@/components/ui/icons/whatsapp-icon";
 import { cn } from "@/helpers/cn";
 import Image from "next/image";
 import Link from "next/link";
+import LaunchAProjectBtn from "./launch-a-project-btn";
 
 const navItems = [
   {
@@ -86,9 +87,10 @@ const Navbar = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button intent="secondary" size="small">
+            {/* <Button intent="secondary" size="small">
               Launch a project
-            </Button>
+            </Button> */}
+            <LaunchAProjectBtn />
             <Link href="https://wa.me/+447438283469" target="_blank">
               <Button intent="secondary" size="small" className="!p-2.5">
                 <WhatsappIcon />
@@ -152,9 +154,11 @@ const Navbar = () => {
 
             {/* Mobile Buttons */}
             <div className="border-t border-neutral-500 flex items-center gap-4 pt-4">
-              <Button intent="secondary" size="small">
+              {/* <Button intent="secondary" size="small">
                 Launch a project
-              </Button>
+              </Button> */}
+
+              <LaunchAProjectBtn />
               <Button intent="secondary" size="small" className="!p-2.5">
                 <WhatsappIcon />
               </Button>

@@ -1,5 +1,7 @@
 import Button from "@/components/ui/button";
 import Image from "next/image";
+import HomeHeroStrategyBtn from "./home-hero-strategy-btn";
+import Link from "next/link";
 
 const reviewsPlatform = [
   {
@@ -35,10 +37,12 @@ const HomeHero = () => {
         </p>
 
         <div className="flex flex-wrap items-center gap-4">
-          <Button intent="secondary">Book a free strategy call</Button>
-          <Button intent="secondary" className="px-14" modifier="outline">
-            Explore our works
-          </Button>
+          <HomeHeroStrategyBtn />
+          <Link href="#works">
+            <Button intent="secondary" className="px-14" modifier="outline">
+              Explore our works
+            </Button>
+          </Link>
         </div>
 
         {/* review */}
