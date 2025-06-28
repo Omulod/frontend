@@ -1,37 +1,18 @@
 import SectionHeading from "@/components/common/section-heading";
+import { ISiteSettings } from "@/types/common.types";
 import Image from "next/image";
 
-const stats = [
-  {
-    value: "£4.2M+",
-    description: "Total client revenue influenced by Omulod-designed products.",
-  },
-  {
-    value: "1.3M+",
-    description: "Users served across platforms we've designed or built.",
-  },
-  {
-    value: "97.5%",
-    description: "Client satisfaction rate based on post-project surveys.",
-  },
-  {
-    value: "125+",
-    description: "Startups, SaaS brands, and teams we've partnered with.",
-  },
-  {
-    value: "4.9",
-    description: "Average project rating across reviews and feedback.",
-  },
-  {
-    value: "40+",
-    description: "Frameworks, stacks, and tools we actively use and support.",
-  },
-];
-const TeamBehindSection = () => {
+const TeamBehindSection = ({
+  siteSettings,
+}: {
+  siteSettings: ISiteSettings | null;
+}) => {
+  const stats = siteSettings?.statistics_reports || [];
+
   return (
     <section id="company" className="container pt-28">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="lg:col-span-6">
           <SectionHeading
             subtitle="MEET THE TEAM BEHIND"
             title="Designers, developers, and doers with a product mindset"
@@ -60,10 +41,11 @@ const TeamBehindSection = () => {
           </p>
         </div>
 
+        <div className="hidden lg:block lg:col-span-1" />
         {/* stats section */}
-        <div className="p-8 max-w-4xl mx-auto rounded-3xl backdrop-blur-xs bg-neutral-500/10">
+        <div className="lg:col-span-5 max-w-4xl mx-auto rounded-3xl backdrop-blur-xs bg-neutral-500/10">
           <div className="grid grid-cols-2 grid-rows-3">
-            {stats.map((stat, index) => (
+            {stats.slice(0, 6).map((stat, index) => (
               <div
                 key={index}
                 className={`p-4 md:p-8 ${
@@ -77,10 +59,10 @@ const TeamBehindSection = () => {
                 }`}
               >
                 <div className="text-2xl md:text-4xl font-extrabold mb-4">
-                  {stat.value}
+                  {stat?.obc_statistics_title}
                 </div>
                 <div className="leading-relaxed text-sm md:text-base">
-                  {stat.description}
+                  {stat.obc_statistics_description}
                 </div>
               </div>
             ))}
@@ -90,7 +72,14 @@ const TeamBehindSection = () => {
 
       {/* image section */}
       <div className="flex relative items-center justify-center mt-5">
-        <div className="rounded-[1780px] absolute z-10 w-full h-[440px] bg-primary-700 filter blur-[145.82278442382812px]" />
+        {/* <div className="rounded-[1780px] absolute z-10 w-full h-[440px] bg-primary-700 filter blur-[145.82278442382812px]" /> */}
+        <Image
+          src="/images/gradient-v2.svg"
+          width={1640}
+          height={570}
+          alt="team-image"
+          className="absolute left-0 right-0 mx-auto w-full rounded-t-4xl -bottom-20 -z-10 blur-[140px] opacity-80"
+        />
         <Image
           src="/images/team-image.png"
           width={1007}

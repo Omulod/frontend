@@ -19,7 +19,7 @@ const HomeBlock = ({
     <>
       <HomeHero siteSettings={siteSettings} />
       <HeroSlider />
-      <TeamBehindSection />
+      <TeamBehindSection siteSettings={siteSettings} />
       <div className="bg-gradient-to-b from-neutral-900 relative z-50 to-neutral-50/10">
         <TrustedSection />
         <IndustryExpertiseSection />
