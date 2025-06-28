@@ -3,8 +3,6 @@ import FacebookIcon from "@/components/ui/icons/facebook-icon";
 import FigmaIcon from "@/components/ui/icons/figma-icon";
 import LinkedinIcon from "@/components/ui/icons/linkedin-icon";
 import WhatsappIcon from "@/components/ui/icons/whatsapp-icon";
-import XIcon from "@/components/ui/icons/x-icon";
-import YoutubeIcon from "@/components/ui/icons/youtube-icon";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -102,31 +100,34 @@ const FooterLinksSection = () => {
         </div>
 
         <div className="flex items-center gap-4 mb-10">
-          <Link href="/">
+          <Link
+            href="https://www.facebook.com/profile.php?id=61577666725225"
+            target="_black"
+          >
             <Button intent="secondary" className="!p-2.5">
               <FacebookIcon size={32} />
             </Button>
           </Link>
-          <Link href="/">
+          {/* <Link href="/">
             <Button intent="secondary" className="!p-2.5">
               <XIcon size={32} />
             </Button>
-          </Link>
-          <Link href="/">
+          </Link> */}
+          <Link href="https://wa.me/+447438283469" target="_blank">
             <Button intent="secondary" className="!p-2.5">
               <WhatsappIcon size={32} />
             </Button>
           </Link>
-          <Link href="/">
+          <Link href="https://www.linkedin.com/company/omulod" target="_black">
             <Button intent="secondary" className="!p-2.5">
               <LinkedinIcon size={32} />
             </Button>
           </Link>
-          <Link href="/">
+          {/* <Link href="/">
             <Button intent="secondary" className="!p-2.5">
               <YoutubeIcon size={32} />
             </Button>
-          </Link>
+          </Link> */}
         </div>
 
         <Button intent="secondary" size="large" className="w-full">

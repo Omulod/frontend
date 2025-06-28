@@ -65,8 +65,8 @@ const FaqSection = ({ faqsData }: { faqsData: IFaqData[] }) => {
                 "Receive first designs in 4–5 days",
                 "Refine, build, and launch",
               ]}
-              facebookLink=""
-              linkedInLink=""
+              facebookLink="https://www.facebook.com/saif.ratul93"
+              linkedInLink="https://www.linkedin.com/in/saif-bin-alam"
             />
           </div>
         </div>

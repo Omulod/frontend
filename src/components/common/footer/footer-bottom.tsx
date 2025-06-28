@@ -46,7 +46,7 @@ const FooterBottom = () => {
           src="/images/footer/omulod-footer-image.png"
           width={968}
           height={345}
-          alt="omulod-footer-image "
+          alt="omulod-footer-image"
         />
       </div>
     </div>

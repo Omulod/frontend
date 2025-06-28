@@ -38,9 +38,9 @@ const PricingCard = ({
       <Image
         src="/images/hover-gradiant.svg"
         width={1640}
-        height={570}
+        height={970}
         alt="hover-gradiant"
-        className="absolute left-0 right-0 -bottom-0 h-full rounded-3xl opacity-0 group-hover:opacity-80 transition-all duration-300"
+        className="absolute left-0 right-0 bottom-0 rounded-3xl opacity-0 group-hover:opacity-80 transition-all duration-300"
       />
       {plan?.is_featured && (
         <div className="absolute bg-primary-500 -top-5 right-10 rounded-lg text-primary-900 flex items-center gap-2 font-bold py-2 px-3.5">
@@ -67,6 +67,9 @@ const PricingCard = ({
           <div key={index} className="flex items-center justify-between">
             <div className="flex items-center w-full justify-between gap-3">
               <span>{feature.feature_name}</span>
+              {feature.add_on_text && (
+                <span className="text-primary-500">{feature.add_on_text}</span>
+              )}
               <div
                 className={cn({
                   hidden: feature.add_on_text,

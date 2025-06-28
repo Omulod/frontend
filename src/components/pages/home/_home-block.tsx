@@ -1,7 +1,8 @@
 import { IFaqData, ISiteSettings } from "@/types/common.types";
+import { IServicesData } from "@/types/services.types";
+import axios from "axios";
 import ContactUsSection from "./contact-us-section";
 import FaqSection from "./faq-section";
-import FeaturedWorkSection from "./featured-work-section";
 import HeroSlider from "./hero-slider";
 import HomeHero from "./home-hero";
 import IndustryExpertiseSection from "./industry-expertise-section";
@@ -9,8 +10,6 @@ import OurServices from "./our-services";
 import TeamBehindSection from "./team-behind-section";
 import TrustedSection from "./trusted-section";
 import WebsitePlanSection from "./website-plan-section";
-import axios from "axios";
-import { IServicesData } from "@/types/services.types";
 
 const HomeBlock = async ({
   siteSettings,
@@ -34,7 +33,7 @@ const HomeBlock = async ({
         <TrustedSection />
         <IndustryExpertiseSection />
       </div>
-      <FeaturedWorkSection />
+      {/* <FeaturedWorkSection /> */}
       <OurServices servicesData={serviceData} />
       <FaqSection faqsData={faqsData?.data} />
       <div className="bg-surface-black-01">
