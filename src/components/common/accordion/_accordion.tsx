@@ -25,7 +25,7 @@ const Accordion = ({ items, activeItem, className }: IAccordionProps) => {
         <div
           key={item.id}
           className={cn(
-            "mb-8 border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-01 px-8 py-3"
+            "mb-8 border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-03 px-8 py-3"
           )}
         >
           <div

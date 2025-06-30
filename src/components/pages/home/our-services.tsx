@@ -17,7 +17,7 @@ const OurServices = ({
   }, []);
 
   return (
-    <section id="services" className="bg-surface-black-01 py-28">
+    <section id="services" className="bg-surface-black-01 pb-28">
       <div className="container">
         <SectionHeading
           subtitle="Our Services"

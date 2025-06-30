@@ -53,8 +53,6 @@ const Navbar = () => {
     });
   }, []);
 
-  console.log("siteSettings", siteSettings);
-
   const whatsappLink = siteSettings?.footer_settings.footer_social_links.find(
     (item) => item.obc_social_link_title == "WhatsApp"
   );

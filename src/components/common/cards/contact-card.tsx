@@ -31,13 +31,15 @@ const ContactCard = ({
         className
       )}
     >
-      <Image
-        src="/images/bg-gradient-contact-card.svg"
-        width={1640}
-        height={570}
-        alt="bg-gradient"
-        className="absolute inset-0 opacity-0 w-full h-full group-hover:opacity-100 transition-all duration-300 -z-10"
-      />
+      <div className="absolute inset-0 opacity-0 w-full h-full group-hover:opacity-100 transition-all duration-300 -z-10">
+        <Image
+          src="/images/bg-gradient-contact-card.svg"
+          width={1640}
+          height={570}
+          alt="bg-gradient"
+          className="h-[160%]"
+        />
+      </div>
       <h5>{title}</h5>
       <div className="mt-6 flex flex-wrap justify-between gap-4">
         <Image
