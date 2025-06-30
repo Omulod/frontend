@@ -5,27 +5,18 @@ import ArrowLongRightIcon from "@/components/ui/icons/arrow-long-right-icon";
 import TrustedSectionSlider from "./trusted-section-slider";
 import OmulodIcon from "@/components/ui/icons/omulod-icon";
 import Image from "next/image";
+import { ISiteSettings, ITestimonial } from "@/types/common.types";
+import Link from "next/link";
 
-const reviews = [
-  {
-    image: "/images/google.png",
-    text: "4.9/5 (98 Reviews)",
-  },
-  {
-    image: "/images/google.png",
-    text: "4.9/5 (98 Reviews)",
-  },
-  {
-    image: "/images/google.png",
-    text: "4.9/5 (98 Reviews)",
-  },
-  {
-    image: "/images/google.png",
-    text: "4.9/5 (98 Reviews)",
-  },
-];
+const TrustedSection = ({
+  testimonials,
+  siteSettings,
+}: {
+  testimonials: ITestimonial[];
+  siteSettings: ISiteSettings | null;
+}) => {
+  const reviews = siteSettings?.review_items || [];
 
-const TrustedSection = () => {
   return (
     <section className="py-32">
       <div className="container flex items-center justify-between gap-4">
@@ -61,27 +52,32 @@ const TrustedSection = () => {
             </p>
             <div className="flex flex-col gap-6 mt-8">
               {reviews.map((item, index) => (
-                <Button intent="secondary" className="" key={index}>
-                  <div className="flex items-center gap-2 justify-between">
-                    <Image
-                      src={item.image}
-                      width={60}
-                      height={30}
-                      alt="logos"
-                    />
-                    <div className="flex items-center gap-1">
-                      <OmulodIcon size={16} />
-                      <p className="font-normal">{item.text}</p>
+                <Link href="#" target="_blank" key={index}>
+                  <Button intent="secondary" className="w-full">
+                    <div className="flex items-center gap-2 justify-between">
+                      <Image
+                        src={item?.obc_review_icon || ""}
+                        width={24}
+                        height={24}
+                        alt="logos"
+                      />
+                      <div className="flex items-center gap-1">
+                        <OmulodIcon size={16} />
+                        <p className="font-normal">
+                          {item.obc_review_average_rating} (
+                          {item.obc_review_number})
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Button>
+                  </Button>
+                </Link>
               ))}
             </div>
           </div>
 
           <div className="col-span-1 lg:col-span-8 xl:col-span-9 relative z-[100]">
             <div className="border border-surface-border h-full lg:absolute left-0 top-0 lg:w-screen">
-              <TrustedSectionSlider />
+              <TrustedSectionSlider testimonials={testimonials} />
             </div>
           </div>
         </div>

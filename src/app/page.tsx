@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 60; // revalidate at every 60 seconds
 
-const getSiteSettings = async (): Promise<ISiteSettings | null> => {
+export const getSiteSettings = async (): Promise<ISiteSettings | null> => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/omulod/site-settings`

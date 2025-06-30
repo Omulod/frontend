@@ -15,26 +15,27 @@ const button = cva("relative transition-all cursor-pointer", {
         "font-semibold",
       ],
       secondary: [
-        "bg-[#1a1a1a75]",
+        "bg-surface-black-02",
         "text-neutral-0",
         "rounded-[100px]",
         "backdrop-blur-3xl",
         "shadow-button-secondary",
         "hover:shadow-button",
+        "hover:bg-primary-500/5",
         "duration-500",
         "font-semibold",
       ],
     },
     size: {
-      small: ["px-6", "py-3", "text-sm"],
+      small: ["px-6", "py-2.5", "text-sm"],
       medium: ["px-8", "py-4", "text-base"],
-      large: ["px-10", "py-[22px]", "text-lg"],
+      large: ["px-10", "py-[1.1257rem]", "text-lg"],
     },
     modifier: {
       outline: [
         "bg-transparent",
         "outline-1",
-        "outline-current!",
+        "outline-current",
         "shadow-none!",
         "-outline-offset-1",
       ],
@@ -51,7 +52,7 @@ const button = cva("relative transition-all cursor-pointer", {
       intent: "secondary",
       modifier: "outline",
       className:
-        "!text-secondary-500 hover:text-primary-500 hover:bg-primary-900/40 outline-secondary-20",
+        "transition-all hover:outline-none! !text-secondary-500 outline-surface-border! hover:shadow-button!",
     },
   ],
   defaultVariants: {

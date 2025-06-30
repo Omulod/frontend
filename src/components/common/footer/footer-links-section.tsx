@@ -1,10 +1,11 @@
 import Button from "@/components/ui/button";
-import FacebookIcon from "@/components/ui/icons/facebook-icon";
-import FigmaIcon from "@/components/ui/icons/figma-icon";
-import LinkedinIcon from "@/components/ui/icons/linkedin-icon";
-import WhatsappIcon from "@/components/ui/icons/whatsapp-icon";
+import {
+  IFooterAddressLocation,
+  IFooterSocialLink,
+} from "@/types/common.types";
 import Image from "next/image";
 import Link from "next/link";
+import parse from "html-react-parser";
 
 const importantLinks = [
   {
@@ -80,7 +81,15 @@ const importantLinks = [
   },
 ];
 
-const FooterLinksSection = () => {
+const FooterLinksSection = ({
+  footer_text,
+  socialLinks,
+  footer_address_locations,
+}: {
+  footer_text?: string;
+  socialLinks?: IFooterSocialLink[];
+  footer_address_locations?: IFooterAddressLocation[];
+}) => {
   return (
     <div className="container grid grid-cols-1 lg:grid-cols-12 gap-y-10 py-14">
       <div className="lg:col-span-4 max-w-[386px]">
@@ -92,50 +101,30 @@ const FooterLinksSection = () => {
             alt="omulod-logo-white"
           />
         </Link>
-        <div className="text-lg mt-8 mb-10">
-          <p>Design. Develop. Deliver.</p>
-          <p>
-            Simplifying digital products for startups & <br /> enterprises.
-          </p>
-        </div>
+        <div className="text-lg mt-8 mb-10">{parse(footer_text || "")}</div>
 
         <div className="flex items-center gap-4 mb-10">
-          <Link
-            href="https://www.facebook.com/profile.php?id=61577666725225"
-            target="_black"
-          >
-            <Button intent="secondary" className="!p-2.5">
-              <FacebookIcon size={32} />
-            </Button>
-          </Link>
-          {/* <Link href="/">
-            <Button intent="secondary" className="!p-2.5">
-              <XIcon size={32} />
-            </Button>
-          </Link> */}
-          <Link href="https://wa.me/+447438283469" target="_blank">
-            <Button intent="secondary" className="!p-2.5">
-              <WhatsappIcon size={32} />
-            </Button>
-          </Link>
-          <Link href="https://www.linkedin.com/company/omulod" target="_black">
-            <Button intent="secondary" className="!p-2.5">
-              <LinkedinIcon size={32} />
-            </Button>
-          </Link>
-          {/* <Link href="/">
-            <Button intent="secondary" className="!p-2.5">
-              <YoutubeIcon size={32} />
-            </Button>
-          </Link> */}
+          {socialLinks?.map((item, index) => (
+            <Link key={index} href={item?.obc_social_link_url} target="_blank">
+              <Button intent="secondary" className="!p-2.5">
+                <Image
+                  src={item?.obc_social_link_icon}
+                  width={32}
+                  height={32}
+                  alt="social-icon"
+                  className="h-8 w-8 object-cover"
+                />
+              </Button>
+            </Link>
+          ))}
         </div>
 
-        <Button intent="secondary" size="large" className="w-full">
+        {/* <Button intent="secondary" size="large" className="w-full">
           <div className="flex items-center justify-between gap-4">
             <span>Company deck</span>
             <FigmaIcon />
           </div>
-        </Button>
+        </Button> */}
       </div>
       <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-5 gap-4">
         {importantLinks.map((item) => (
@@ -162,32 +151,22 @@ const FooterLinksSection = () => {
           <h6 className="text-primary-500 font-semibold uppercase">
             Locations
           </h6>
-          <div className="mt-6">
-            <Image
-              src="/images/footer/vector-2.png"
-              width={30}
-              height={30}
-              alt="vector-1"
-            />
-            <p className="mt-4 text-lg">London</p>
-            <p className="my-1">
-              19-21 Mortimer St, London W1T 3JE, United Kingdom
-            </p>
-            <p>+44 7438 283469</p>
-          </div>
-          <div className="mt-6">
-            <Image
-              src="/images/footer/vector-1.png"
-              width={30}
-              height={30}
-              alt="vector-1"
-            />
-            <p className="mt-4 text-lg">Bangladesh</p>
-            <p className="my-1">
-              19-21 Mortimer St, London W1T 3JE, United Kingdom
-            </p>
-            <p>+880 1615966703</p>
-          </div>
+
+          {footer_address_locations?.map((item, index) => (
+            <div key={index} className="mt-6">
+              <Image
+                src={item?.obc_address_icon}
+                width={30}
+                height={30}
+                alt="vector-1"
+              />
+              <p className="mt-4 text-lg">{item?.obc_address_location}</p>
+              <p className="my-1">{item?.obc_address_city}</p>
+              {item?.obc_address_phone_numbers.map((phone, index) => (
+                <p key={index}>{phone.obc_phone_number}</p>
+              ))}
+            </div>
+          ))}
 
           <div className="mt-8">
             <h6 className="text-primary-500 font-semibold uppercase">

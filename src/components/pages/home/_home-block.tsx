@@ -1,4 +1,9 @@
-import { IFaqData, ISiteSettings } from "@/types/common.types";
+import {
+  IFaqData,
+  IIndustry,
+  ISiteSettings,
+  ITestimonial,
+} from "@/types/common.types";
 import { IServicesData } from "@/types/services.types";
 import axios from "axios";
 import ContactUsSection from "./contact-us-section";
@@ -24,14 +29,25 @@ const HomeBlock = async ({
     `${process.env.NEXT_PUBLIC_API_URL}/omulod/faqs`
   );
 
+  const { data: testimonials } = await axios.get<ITestimonial[]>(
+    `${process.env.NEXT_PUBLIC_API_URL}/omulod/testimonials`
+  );
+
+  const { data: industries } = await axios.get<{ data: IIndustry[] }>(
+    `${process.env.NEXT_PUBLIC_API_URL}/omulod/industries`
+  );
+
   return (
     <>
       <HomeHero siteSettings={siteSettings} />
-      <HeroSlider />
+      <HeroSlider siteSettings={siteSettings} />
       <TeamBehindSection siteSettings={siteSettings} />
       <div className="bg-surface-black-01">
-        <TrustedSection />
-        <IndustryExpertiseSection />
+        <TrustedSection
+          testimonials={testimonials}
+          siteSettings={siteSettings}
+        />
+        <IndustryExpertiseSection industry={industries?.data?.[0]} />
       </div>
       {/* <FeaturedWorkSection /> */}
       <OurServices servicesData={serviceData} />

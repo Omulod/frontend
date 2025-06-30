@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "@/components/ui/button";
 import WhatsappIcon from "@/components/ui/icons/whatsapp-icon";
 import { cn } from "@/helpers/cn";
 import Image from "next/image";
 import Link from "next/link";
 import LaunchAProjectBtn from "./launch-a-project-btn";
+import axios from "axios";
+import { ISiteSettings } from "@/types/common.types";
 
 const navItems = [
   {
@@ -16,10 +18,10 @@ const navItems = [
     label: "Company",
     href: "#company",
   },
-  {
-    label: "Works",
-    href: "#works",
-  },
+  // {
+  //   label: "Works",
+  //   href: "#works",
+  // },
   {
     label: "Services",
     href: "#services",
@@ -45,6 +47,26 @@ const navItems = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [siteSettings, setSiteSettings] = useState<ISiteSettings | null>(null);
+
+  useEffect(() => {
+    const getSiteSettings = async () => {
+      const res = await axios.get("/api/site-settings");
+
+      return res.data as ISiteSettings;
+    };
+
+    getSiteSettings().then((data) => {
+      setSiteSettings(data);
+    });
+  }, []);
+
+  console.log("siteSettings", siteSettings);
+
+  const whatsappLink = siteSettings?.footer_settings.footer_social_links.find(
+    (item) => item.obc_social_link_title == "WhatsApp"
+  );
 
   return (
     <nav className="relative">
@@ -91,7 +113,14 @@ const Navbar = () => {
               Launch a project
             </Button> */}
             <LaunchAProjectBtn />
-            <Link href="https://wa.me/+447438283469" target="_blank">
+
+            <Link
+              href={
+                whatsappLink?.obc_social_link_url ||
+                "https://wa.me/+447438283469"
+              }
+              target="_blank"
+            >
               <Button intent="secondary" size="small" className="!p-2.5">
                 <WhatsappIcon />
               </Button>
@@ -159,9 +188,17 @@ const Navbar = () => {
               </Button> */}
 
               <LaunchAProjectBtn />
-              <Button intent="secondary" size="small" className="!p-2.5">
-                <WhatsappIcon />
-              </Button>
+              <Link
+                href={
+                  whatsappLink?.obc_social_link_url ||
+                  "https://wa.me/+447438283469"
+                }
+                target="_blank"
+              >
+                <Button intent="secondary" size="small" className="!p-2.5">
+                  <WhatsappIcon />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

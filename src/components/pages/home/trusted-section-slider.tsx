@@ -1,62 +1,18 @@
 "use client";
 import ReviewCard from "@/components/common/cards/review-card";
 import { cn } from "@/helpers/cn";
+import { ITestimonial } from "@/types/common.types";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const TrustedSectionSlider = ({ className }: { className?: string }) => {
-  const sliderItems = [
-    {
-      companyLogo: "/images/goodfirms.png",
-      description:
-        "“We’re really pleased with how the site turned out. We’re already seeing the impact of omulod’s work  ",
-      position: "Founder and CEO",
-      personImage: "/images/goodfirms.png",
-      name: "Kelli Fairbrother , xigxag",
-    },
-    {
-      companyLogo: "/images/google.png",
-      description:
-        "“We’re really pleased with how the site turned out. We’re already seeing the impact of omulod’s work — we saw almost 4.5x more clicks and 67x more impressions from our site within a month. So far, we’ve only indexed 17% of our site’s pages, so we are expecting those numbers to still increase.” omulod’s work — we saw almost 4.5x more clicks and 67x more impressions from our site within a month. So far, we’ve only indexed 17% of our site’s pages, so we are expecting those numbers to still increase. omulod’s work — we saw almost 4.5x more clicks and 67x more impressions from our site within a month. So far, we’ve only indexed 17% of our site’s pages, so we are expecting those numbers to still increase. omulod’s work — we saw almost 4.5x more clicks and 67x more impressions from our site within a month. So far, we’ve only indexed 17% of our site’s pages, so we are expecting those numbers to still increase.",
-      name: "Kelli Fairbrother , xigxag",
-      position: "Founder and CEO",
-      personImage: "/images/google.png",
-    },
-    {
-      companyLogo: "/images/clutch.png",
-      description:
-        "“We’re really pleased with how the site turned out. We’re already seeing the impact of omulod’s work — we saw almost 4.5x more clicks and 67x more impressions from our site within a month. So far, we’ve only indexed 17% of our site’s pages, so we are expecting those numbers to still increase.”",
-      name: "Kelli Fairbrother , xigxag",
-      position: "Founder and CEO",
-      personImage: "/images/clutch.png",
-    },
-    {
-      companyLogo: "/images/goodfirms.png",
-      description:
-        "“We’re really pleased with how the site turned out. We’re already seeing the impact of omulod’s work — we saw almost 4.5x more clicks and 67x more impressions from our site within a month. So far, we’ve only indexed 17% of our site’s pages, so we are expecting those numbers to still increase.”",
-      name: "Kelli Fairbrother , xigxag",
-      position: "Founder and CEO",
-      personImage: "/images/goodfirms.png",
-    },
-    {
-      companyLogo: "/images/google.png",
-      description:
-        "“We’re really pleased with how the site turned out. We’re already seeing the impact of omulod’s work — we saw almost 4.5x more clicks and 67x more impressions from our site within a month. So far, we’ve only indexed 17% of our site’s pages, so we are expecting those numbers to still increase.”",
-      name: "Kelli Fairbrother , xigxag",
-      position: "Founder and CEO",
-      personImage: "/images/google.png",
-    },
-    {
-      companyLogo: "/images/clutch.png",
-      description:
-        "“We’re really pleased with how the site turned out. We’re already seeing the impact of omulod’s work — we saw almost 4.5x more clicks and 67x more impressions from our site within a month. So far, we’ve only indexed 17% of our site’s pages, so we are expecting those numbers to still increase.”",
-      name: "Kelli Fairbrother , xigxag",
-      position: "Founder and CEO",
-      personImage: "/images/clutch.png",
-    },
-  ];
-
+const TrustedSectionSlider = ({
+  testimonials = [],
+  className,
+}: {
+  testimonials: ITestimonial[];
+  className?: string;
+}) => {
   // const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -101,10 +57,14 @@ const TrustedSectionSlider = ({ className }: { className?: string }) => {
         }}
         className="h-full"
       >
-        {sliderItems.map((item, index) => (
+        {testimonials.map((item, index) => (
           <SwiperSlide key={index}>
             <ReviewCard
-              {...item}
+              name={item.testimonial_name}
+              description={item.testimonial_text}
+              personImage={item.testimonial_image}
+              companyLogo={item.company_image}
+              position={item.testimonial_designation}
               className={cn(
                 "border-r border-surface-border hover:bg-gradient-to-t hover:from-primary-500/20 hover:to-neutral-900/10 transition-all cursor-grab",
                 {

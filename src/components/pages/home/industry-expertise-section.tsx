@@ -4,8 +4,9 @@ import ArrowLongLeftIcon from "@/components/ui/icons/arrow-long-left-icon";
 import ArrowLongRightIcon from "@/components/ui/icons/arrow-long-right-icon";
 import IndustryExpertiseSlider from "./industry-expertise-slider";
 import Image from "next/image";
+import { IIndustry } from "@/types/common.types";
 
-const IndustryExpertiseSection = () => {
+const IndustryExpertiseSection = ({ industry }: { industry?: IIndustry }) => {
   return (
     <div className="relative z-10 overflow-x-clip pb-28">
       <Image
@@ -17,8 +18,10 @@ const IndustryExpertiseSection = () => {
       />
       <div className="container flex items-center justify-between gap-4">
         <SectionHeading
-          subtitle="OUR INDUSTRY EXPERTISE"
-          title="Built for real challenges. Designed for growth."
+          subtitle={industry?.industry_subtitle || "OUR INDUSTRY EXPERTISE"}
+          title={
+            industry?.title || "Built for real challenges. Designed for growth."
+          }
           className="max-w-[900px] relative z-10"
         />
 
@@ -42,7 +45,10 @@ const IndustryExpertiseSection = () => {
 
       <div className="container relative mt-14">
         <div className="lg:h-[470px]">
-          <IndustryExpertiseSlider className="lg:absolute lg:w-screen left-0 top-0" />
+          <IndustryExpertiseSlider
+            industry_categories={industry?.industry_categories || []}
+            className="lg:absolute lg:w-screen left-0 top-0"
+          />
         </div>
       </div>
     </div>
