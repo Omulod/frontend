@@ -22,7 +22,7 @@ const OurServices = ({
         <SectionHeading
           subtitle="Our Services"
           title={
-            activeTab?.services.data.service_subtitle ||
+            activeTab?.services.data.service_title ||
             "Choose your path to success with our comprehensive service offerings"
           }
           className="max-w-[804px] mb-4"
@@ -57,7 +57,7 @@ const OurServices = ({
           {activeTab?.services?.data?.service_details?.map(
             (item, serviceindex) => (
               <div key={serviceindex}>
-                <p className="text-xl text-primary-500 font-semibold mb-6">
+                <p className="text-xl text-primary-500 font-semibold mb-6 uppercase">
                   {item?.service_category}
                 </p>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -68,6 +68,7 @@ const OurServices = ({
                       title={item?.item_title}
                       subtitle={item?.item_subtitle}
                       buttonText={item?.item_button_text}
+                      buttonUrl={item?.item_button_url}
                       points={item?.item_features.map(
                         (feature) => feature?.feature_title
                       )}

@@ -1,4 +1,5 @@
 import CopyIcon from "@/components/ui/icons/copy-icon";
+import { cn } from "@/helpers/cn";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +11,7 @@ interface IContactCard {
   email: string;
   facebook: string;
   linkedin: string;
+  className?: string;
 }
 
 const ContactCard = ({
@@ -20,9 +22,22 @@ const ContactCard = ({
   email,
   facebook,
   linkedin,
+  className,
 }: IContactCard) => {
   return (
-    <div className="p-8 bg-gradient-to-t from-primary-500/5 hover:from-primary-500/15 hover:to-neutral-900/10 backdrop-blur-2xl transition-all">
+    <div
+      className={cn(
+        "relative z-40 p-8 bg-transparent transition-all group overflow-clip",
+        className
+      )}
+    >
+      <Image
+        src="/images/bg-gradient-contact-card.svg"
+        width={1640}
+        height={570}
+        alt="bg-gradient"
+        className="absolute inset-0 opacity-0 w-full h-full group-hover:opacity-100 transition-all duration-300 -z-10"
+      />
       <h5>{title}</h5>
       <div className="mt-6 flex flex-wrap justify-between gap-4">
         <Image

@@ -4,7 +4,13 @@ import SectionHeading from "@/components/common/section-heading";
 import { IFaqData } from "@/types/common.types";
 import Image from "next/image";
 
-const FaqSection = ({ faqsData }: { faqsData: IFaqData[] }) => {
+const FaqSection = ({
+  faqsData,
+  whatsAppLink,
+}: {
+  faqsData: IFaqData[];
+  whatsAppLink?: string;
+}) => {
   return (
     <section id="faqs" className="overflow-x-clip mt-28 pb-20">
       <div className="container">
@@ -67,6 +73,7 @@ const FaqSection = ({ faqsData }: { faqsData: IFaqData[] }) => {
               ]}
               facebookLink="https://www.facebook.com/saif.ratul93"
               linkedInLink="https://www.linkedin.com/in/saif-bin-alam"
+              whatsAppLink={whatsAppLink}
             />
           </div>
         </div>

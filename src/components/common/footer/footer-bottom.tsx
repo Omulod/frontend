@@ -41,7 +41,7 @@ const FooterBottom = () => {
         </div>
       </div>
       <div className="relative flex justify-center pt-28">
-        <span className="absolute bg-primary-600 max-w-[900px] w-full blur-3xl bottom-0 rounded-t-full h-[70%] -z-10" />
+        <span className="absolute bg-primary-600/80 max-w-[900px] w-full blur-3xl bottom-0 rounded-t-full h-[70%] -z-10" />
         <Image
           src="/images/footer/omulod-footer-image.png"
           width={968}

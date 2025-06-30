@@ -11,6 +11,7 @@ interface ICeoCardProps {
   points: string[];
   facebookLink: string;
   linkedInLink: string;
+  whatsAppLink?: string;
   className?: string;
 }
 
@@ -21,6 +22,7 @@ const CeoCard = ({
   points,
   facebookLink,
   linkedInLink,
+  whatsAppLink,
   className,
 }: ICeoCardProps) => {
   return (
@@ -69,12 +71,14 @@ const CeoCard = ({
         </a>
       </div>
 
-      <Button className="w-full mt-24" intent="secondary" size="large">
-        <div className="flex items-center justify-between gap-4">
-          <span>Ask Question</span>
-          <WhatsappIcon size={32} />
-        </div>
-      </Button>
+      <Link href={whatsAppLink || ""} target="_blank" rel="noreferrer">
+        <Button className="w-full mt-24 pr-5" intent="secondary" size="large">
+          <div className="flex items-center justify-between gap-4">
+            <span>Ask Question</span>
+            <WhatsappIcon size={36} />
+          </div>
+        </Button>
+      </Link>
     </div>
   );
 };

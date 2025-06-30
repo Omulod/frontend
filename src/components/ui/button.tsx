@@ -15,10 +15,10 @@ const button = cva("relative transition-all cursor-pointer", {
         "font-semibold",
       ],
       secondary: [
-        "bg-surface-black-02",
+        "bg-surface-black-02/40",
         "text-neutral-0",
         "rounded-[100px]",
-        "backdrop-blur-3xl",
+        "backdrop-blur-[6px]",
         "shadow-button-secondary",
         "hover:shadow-button",
         "hover:bg-primary-500/5",

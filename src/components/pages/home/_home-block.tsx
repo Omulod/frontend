@@ -51,7 +51,14 @@ const HomeBlock = async ({
       </div>
       {/* <FeaturedWorkSection /> */}
       <OurServices servicesData={serviceData} />
-      <FaqSection faqsData={faqsData?.data} />
+      <FaqSection
+        faqsData={faqsData?.data}
+        whatsAppLink={
+          siteSettings?.footer_settings.footer_social_links.find(
+            (item) => item.obc_social_link_title == "WhatsApp"
+          )?.obc_social_link_url
+        }
+      />
       <div className="bg-surface-black-01">
         <WebsitePlanSection />
         <ContactUsSection />
