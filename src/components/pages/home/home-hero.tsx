@@ -39,7 +39,7 @@ const HomeHero = ({ siteSettings }: { siteSettings: ISiteSettings | null }) => {
           {reviews.map((item, index) => (
             <div key={index}>
               <Image
-                src={"/images/trustpilot.png"}
+                src={item.obc_review_logo || "/images/trustpilot.png"}
                 width={114}
                 height={80}
                 alt={item.obc_review_title}

@@ -97,6 +97,7 @@ export interface IFooterSocialLink {
 export interface IReviewItem {
   _type: string;
   obc_review_logo: string;
+  obc_review_icon?: string;
   obc_review_title: string;
   obc_review_number: string;
   obc_review_average_rating: string;

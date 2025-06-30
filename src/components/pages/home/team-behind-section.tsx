@@ -67,7 +67,9 @@ const TeamBehindSection = ({
                     index < stats.length - 2
                       ? "border-b border-neutral-700"
                       : ""
-                  }`}
+                  }
+                  ${index === 4 && "border-b-0"}
+                  `}
                 >
                   <div className="text-2xl md:text-4xl font-extrabold mb-4">
                     {stat?.obc_statistics_title}
@@ -82,7 +84,7 @@ const TeamBehindSection = ({
         </div>
 
         {/* image section */}
-        <div className="flex items-center justify-center mt-5">
+        <div className="flex items-center justify-center -mt-10">
           {/* <div className="rounded-[1780px] absolute z-10 w-full h-[440px] bg-primary-700 filter blur-[145.82278442382812px]" /> */}
 
           <Image

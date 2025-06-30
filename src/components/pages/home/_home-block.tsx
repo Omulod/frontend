@@ -43,7 +43,10 @@ const HomeBlock = async ({
       <HeroSlider siteSettings={siteSettings} />
       <TeamBehindSection siteSettings={siteSettings} />
       <div className="bg-surface-black-01">
-        <TrustedSection testimonials={testimonials} />
+        <TrustedSection
+          testimonials={testimonials}
+          siteSettings={siteSettings}
+        />
         <IndustryExpertiseSection industry={industries?.data?.[0]} />
       </div>
       {/* <FeaturedWorkSection /> */}
