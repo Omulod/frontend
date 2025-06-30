@@ -56,8 +56,36 @@ const ContactUsForm = () => {
     }
   };
 
-  const onSubmit = (data: ContactFormValues) => {
-    console.log({ ...data, budget: selectedBudget, file: attachedFile });
+  const onSubmit = async (data: ContactFormValues) => {
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("message", data.message);
+    if (selectedBudget) formData.append("budget", selectedBudget);
+    if (attachedFile) formData.append("file", attachedFile);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await res.json();
+
+      console.log("result", result);
+
+      if (!res.ok) {
+        console.error(result.error || "Failed to send message");
+        // show toast or error state
+        return;
+      }
+
+      // Success message
+      console.log("Message sent successfully");
+      // Reset form if needed
+    } catch (error) {
+      console.error("Submission error:", error);
+    }
   };
 
   return (

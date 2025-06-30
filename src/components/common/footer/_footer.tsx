@@ -17,6 +17,7 @@ const Footer = async () => {
         footer_address_locations={
           siteSettings?.footer_settings?.footer_address_locations
         }
+        footer_menus={siteSettings?.footer_settings?.footer_menus}
       />
       {/* <FooterAccordion /> */}
       <FooterBottom />
