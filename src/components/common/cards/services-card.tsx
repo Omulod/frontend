@@ -1,16 +1,19 @@
 "use client";
 import Button from "@/components/ui/button";
+import CalButton from "@/components/ui/cal-button";
 import ArrowDownIcon from "@/components/ui/icons/arrow-down-icon";
 import CheckIcon from "@/components/ui/icons/check-icon";
 import OmulodIcon from "@/components/ui/icons/omulod-icon";
 import { cn } from "@/helpers/cn";
 import { IServicePoint } from "@/types/common.types";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface IServicesCardProps extends IServicePoint {
   iconUrl?: string;
   buttonText?: string;
+  buttonUrl?: string;
   isActive?: boolean;
   className?: string;
 }
@@ -18,6 +21,7 @@ const ServicesCard = ({
   title,
   subtitle,
   buttonText,
+  buttonUrl,
   iconUrl,
   points,
   isActive = false,
@@ -72,9 +76,20 @@ const ServicesCard = ({
             </li>
           ))}
         </ul>
-        <Button intent="secondary" className="mt-6 w-full">
-          {buttonText || "Get a quote"}
-        </Button>
+
+        {buttonUrl ? (
+          <Link href={buttonUrl || ""}>
+            <Button intent="secondary" className="mt-6 w-full">
+              {buttonText || "Get a quote"}
+            </Button>
+          </Link>
+        ) : (
+          <CalButton
+            buttonText="Get a quote"
+            intent="secondary"
+            className="mt-6 w-full"
+          />
+        )}
       </div>
     </div>
   );

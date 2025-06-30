@@ -7,7 +7,7 @@ const Footer = async () => {
   const siteSettings = await getSiteSettings();
 
   return (
-    <footer className="container pt-20 md:pt-40">
+    <footer className="pt-20 md:pt-40">
       <FooterLogoSection
         our_agency_acounts={siteSettings?.footer_settings?.our_agency_acounts}
       />

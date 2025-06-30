@@ -25,25 +25,21 @@ const Accordion = ({ items, activeItem, className }: IAccordionProps) => {
         <div
           key={item.id}
           className={cn(
-            "mb-8 border border-neutral-700 rounded-3xl backdrop-blur-xs bg-neutral-500/30 px-8 py-3"
+            "mb-8 border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-01 px-8 py-3"
           )}
         >
-          <div className="flex items-center justify-between gap-10 py-1.5 md:py-3">
+          <div
+            onClick={handleAccordionClick(item.id)}
+            className="cursor-pointer flex items-center justify-between gap-10 py-1.5 md:py-3"
+          >
             <p
-              onClick={handleAccordionClick(item.id)}
-              className={cn(
-                "cursor-pointer text-xl transition-all hover:text-primary-500",
-                {
-                  "text-primary-500": expanded === item.id,
-                }
-              )}
+              className={cn("text-xl transition-all", {
+                "text-primary-500": expanded === item.id,
+              })}
             >
               {item.title}
             </p>
-            <div
-              className="cursor-pointer"
-              onClick={handleAccordionClick(item.id)}
-            >
+            <div>
               <ArrowDownIcon
                 className={cn("transition-all", {
                   "rotate-180": expanded === item.id,

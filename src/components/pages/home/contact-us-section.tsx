@@ -101,7 +101,7 @@ const ContactUsSection = () => {
           </div>
         )}
       </div>
-      <div className="lg:col-span-4 h-fit border border-surface-border rounded-2xl overflow-hidden">
+      <div className="lg:col-span-4 h-fit border border-surface-border rounded-2xl">
         {contactUsData.map((item, index) => (
           <ContactCard
             key={index}
@@ -112,6 +112,9 @@ const ContactUsSection = () => {
             email={item.email}
             facebook={item.facebook}
             linkedin={item.linkedin}
+            className={cn(
+              "border-b border-surface-border last:border-b-0 last:rounded-b-2xl first:rounded-t-2xl"
+            )}
           />
         ))}
       </div>
