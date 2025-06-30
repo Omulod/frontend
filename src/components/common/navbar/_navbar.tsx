@@ -16,10 +16,10 @@ const navItems = [
     label: "Company",
     href: "#company",
   },
-  {
-    label: "Works",
-    href: "#works",
-  },
+  // {
+  //   label: "Works",
+  //   href: "#works",
+  // },
   {
     label: "Services",
     href: "#services",

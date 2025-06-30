@@ -27,6 +27,7 @@ const HomeHeroStrategyBtn = () => {
         data-cal-namespace="30min"
         data-cal-link="omulod/30min"
         data-cal-config='{"layout":"month_view"}'
+        size="large"
       >
         Book a free strategy call
       </Button>

@@ -5,6 +5,7 @@ import ArrowLongRightIcon from "@/components/ui/icons/arrow-long-right-icon";
 import TrustedSectionSlider from "./trusted-section-slider";
 import OmulodIcon from "@/components/ui/icons/omulod-icon";
 import Image from "next/image";
+import { ITestimonial } from "@/types/common.types";
 
 const reviews = [
   {
@@ -25,7 +26,7 @@ const reviews = [
   },
 ];
 
-const TrustedSection = () => {
+const TrustedSection = ({ testimonials }: { testimonials: ITestimonial[] }) => {
   return (
     <section className="py-32">
       <div className="container flex items-center justify-between gap-4">
@@ -81,7 +82,7 @@ const TrustedSection = () => {
 
           <div className="col-span-1 lg:col-span-8 xl:col-span-9 relative z-[100]">
             <div className="border border-surface-border h-full lg:absolute left-0 top-0 lg:w-screen">
-              <TrustedSectionSlider />
+              <TrustedSectionSlider testimonials={testimonials} />
             </div>
           </div>
         </div>

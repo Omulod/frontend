@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "flagcdn.com",
       },
+      {
+        hostname: "backend.omulod.com",
+      },
     ],
   },
 };

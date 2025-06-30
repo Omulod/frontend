@@ -98,15 +98,23 @@ html {
   --tw-font-segoe: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
     "Roboto", "Helvetica Neue", Arial, sans-serif;
 
-  --tw-shadow-button: 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.5) inset,
+  /* --tw-shadow-button: 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.5) inset,
     2px 2px 1px -2px #c7c7c7 inset, -2px -2px 1px -2px #c7c7c7 inset,
     0px 0px 0px 1px #694f02 inset,
-    0px 0px 7px 0px rgba(242, 242, 242, 0.5) inset;
+    0px 0px 7px 0px rgba(242, 242, 242, 0.5) inset; */
 
-  --tw-shadow-button-secondary: 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.5) inset,
+  --tw-shadow-button: 3px 3px 0.5px -3.5px #ffffff80 inset,
+    2px 2px 1px -2px #c7c7c7 inset, -2px -2px 1px -2px #c7c7c7 inset,
+    0px 0px 0px 1px #694f02 inset, 0px 0px 7px 0px #c6964900 inset;
+
+  --tw-shadow-button-secondary: 3px 3px 0.5px -3.5px #ffffff80 inset,
+    2px 2px 1px -2px #797878 inset, -2px -2px 1px -2px #797878 inset,
+    0px 0px 0px 1px #1a1a1a inset, 0px 0px 7px 0px #ffffff00 inset;
+
+  /* --tw-shadow-button-secondary: 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.5) inset,
     2px 2px 1px -2px #797878 inset, -2px -2px 1px -2px #797878 inset,
     0px 0px 0px 1px #1a1a1a inset,
-    0px 0px 7px 0px rgba(242, 242, 242, 0.5) inset;
+    0px 0px 7px 0px rgba(242, 242, 242, 0.5) inset; */
 }
 
 @theme inline {

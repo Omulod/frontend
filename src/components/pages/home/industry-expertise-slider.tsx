@@ -1,57 +1,18 @@
 "use client";
 import ExpertiseCard from "@/components/common/cards/expertise-card";
 import { cn } from "@/helpers/cn";
+import { IIndustryCategory } from "@/types/common.types";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const IndustryExpertiseSlider = ({ className }: { className?: string }) => {
-  const sliderItems = [
-    {
-      title: "LMS & eLearning",
-      subtitle:
-        "Helping educators and training providers scale user experience.",
-      keyPainPoints: [
-        "Outdated UX and low learner engagement",
-        "Complex course setup and content management",
-        "Poor mobile accessibility and tracking",
-      ],
-      approach: [
-        "Learner-first UX with gamified flows",
-        "Easy-to-manage LMS interfaces",
-        "Seamless mobile and SCORM-ready integration",
-      ],
-    },
-    {
-      title: "SaaS platforms",
-      subtitle: "Scalable platforms for fast-growing product teams.",
-      keyPainPoints: [
-        "Slow loading times and low user engagement",
-        "Complex product management and customer support",
-        "Lack of mobile accessibility and tracking",
-      ],
-      approach: [
-        "Fast-loading and easy-to-use interfaces",
-        "Efficient product management and customer support",
-        "Seamless mobile integration",
-      ],
-    },
-    {
-      title: "eCommerce platforms",
-      subtitle: "E-commerce platforms for fast-growing product teams.",
-      keyPainPoints: [
-        "Slow loading times and low user engagement",
-        "Complex product management and customer support",
-        "Lack of mobile accessibility and tracking",
-      ],
-      approach: [
-        "Fast-loading and easy-to-use interfaces",
-        "Efficient product management and customer support",
-        "Seamless mobile integration",
-      ],
-    },
-  ];
-
+const IndustryExpertiseSlider = ({
+  industry_categories,
+  className,
+}: {
+  industry_categories: IIndustryCategory[];
+  className?: string;
+}) => {
   return (
     <div className={cn("relative h-full", className)}>
       <Swiper
@@ -89,9 +50,18 @@ const IndustryExpertiseSlider = ({ className }: { className?: string }) => {
         }}
         className="h-full"
       >
-        {sliderItems.map((item, index) => (
+        {industry_categories.map((item, index) => (
           <SwiperSlide key={index}>
-            <ExpertiseCard {...item} className="cursor-grab" />
+            <ExpertiseCard
+              title={item?.industry_category_name}
+              subtitle={item?.industry_category_moto}
+              icon={item?.industry_category_icon}
+              keyPainPoints={item?.key_plans?.map(
+                (item) => item?.key_plan_name
+              )}
+              approach={item?.approaches?.map((item) => item?.approach_name)}
+              className="cursor-grab"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

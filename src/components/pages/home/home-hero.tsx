@@ -11,7 +11,7 @@ const HomeHero = ({ siteSettings }: { siteSettings: ISiteSettings | null }) => {
     <section className="container lg:min-h-[700px] lg:h-[calc(100vh-188px)] grid grid-cols-1 lg:grid-cols-12 gap-8 py-16">
       <div className=" lg:col-span-7 my-auto">
         <h1>
-          Global design & development agency helping you
+          Global design & development agency helping you{" "}
           <span className="text-primary-500">simplify*</span> digital
           experiences
         </h1>
@@ -23,7 +23,12 @@ const HomeHero = ({ siteSettings }: { siteSettings: ISiteSettings | null }) => {
         <div className="flex flex-wrap items-center gap-4">
           <HomeHeroStrategyBtn />
           <Link href="#works">
-            <Button intent="secondary" className="px-14" modifier="outline">
+            <Button
+              intent="secondary"
+              size="large"
+              className="px-14"
+              modifier="outline"
+            >
               Explore our works
             </Button>
           </Link>

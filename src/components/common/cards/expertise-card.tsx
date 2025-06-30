@@ -1,9 +1,11 @@
 import OmulodIcon from "@/components/ui/icons/omulod-icon";
 import { cn } from "@/helpers/cn";
+import Image from "next/image";
 
 interface IExpertiseProps {
   title: string;
   subtitle: string;
+  icon?: string;
   keyPainPoints: string[];
   approach: string[];
   className?: string;
@@ -12,6 +14,7 @@ interface IExpertiseProps {
 const ExpertiseCard = ({
   title,
   subtitle,
+  icon,
   keyPainPoints,
   approach,
   className,
@@ -23,7 +26,17 @@ const ExpertiseCard = ({
         className
       )}
     >
-      <OmulodIcon size={56} />
+      {icon ? (
+        <Image
+          src={icon}
+          width={56}
+          height={56}
+          alt="icon"
+          className="object-cover w-14 h-14 rounded"
+        />
+      ) : (
+        <OmulodIcon size={56} />
+      )}
       <p className="py-2 text-3xl font-semibold">{title}</p>
       <p className="text-sm font-light">{subtitle}</p>
       <div className="mt-10 border border-surface-border rounded-2xl grid grid-cols-1 md:grid-cols-2">
