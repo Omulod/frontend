@@ -37,7 +37,6 @@ const WebsitePlanDetails = () => {
   };
 
   const [apiPlansData, setApiPlansData] = useState<IPricingData[] | []>([]);
-  console.log(apiPlansData);
 
   useEffect(() => {
     const fetchData = async () => {

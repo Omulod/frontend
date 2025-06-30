@@ -24,7 +24,7 @@ const FooterBottom = () => {
         width={666}
         height={666}
         alt="hero-image"
-        className="absolute -top-[125%] z-[-1] left-1/2 -translate-x-1/2"
+        className="absolute -top-[120%] z-[-1] left-1/2 -translate-x-1/2"
       />
       <div className="flex flex-wrap items-center gap-3 md:gap-6 justify-between">
         <p>© 2025 omulod ltd. All rights reserved.</p>

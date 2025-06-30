@@ -1,94 +1,23 @@
 import Button from "@/components/ui/button";
 import {
   IFooterAddressLocation,
+  IFooterMenus,
   IFooterSocialLink,
 } from "@/types/common.types";
 import Image from "next/image";
 import Link from "next/link";
 import parse from "html-react-parser";
 
-const importantLinks = [
-  {
-    title: "Company",
-    links: [
-      {
-        title: "About us",
-        href: "#",
-      },
-      {
-        title: "Our Team",
-        href: "#",
-      },
-      {
-        title: "Careers",
-        href: "#",
-      },
-      {
-        title: "Blog",
-        href: "#",
-      },
-    ],
-  },
-  {
-    title: "Services",
-    links: [
-      {
-        title: "UI/UX Design",
-        href: "#",
-      },
-      {
-        title: "Web & App Development",
-        href: "#",
-      },
-      {
-        title: "Product Strategy",
-        href: "#",
-      },
-      {
-        title: "No-Code",
-        href: "#",
-      },
-      {
-        title: "View All Services",
-        href: "#",
-      },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      {
-        title: "Case Studies",
-        href: "#",
-      },
-      {
-        title: "FAQ",
-        href: "#",
-      },
-      {
-        title: "Free Tools & Downloads",
-        href: "#",
-      },
-      {
-        title: "Smart Calculator",
-        href: "#",
-      },
-      {
-        title: "Schedule a Call",
-        href: "#",
-      },
-    ],
-  },
-];
-
 const FooterLinksSection = ({
   footer_text,
   socialLinks,
   footer_address_locations,
+  footer_menus,
 }: {
   footer_text?: string;
   socialLinks?: IFooterSocialLink[];
   footer_address_locations?: IFooterAddressLocation[];
+  footer_menus?: IFooterMenus[];
 }) => {
   return (
     <div className="container grid grid-cols-1 lg:grid-cols-12 gap-y-10 py-14">
@@ -127,25 +56,27 @@ const FooterLinksSection = ({
         </Button> */}
       </div>
       <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-5 gap-4">
-        {importantLinks.map((item) => (
-          <div key={item.title}>
-            <h6 className="uppercase text-primary-500 font-semibold">
-              {item.title}
-            </h6>
-            <ul className="mt-8 flex flex-col gap-6">
-              {item.links.map((link) => (
-                <li key={link.title}>
-                  <Link
-                    href={link.href}
-                    className="text-sm hover:text-primary-400 transition-all"
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div className="col-span-3 flex gap-8 justify-between">
+          {footer_menus?.map((item) => (
+            <div key={item.obc_menu_title} className="w-full">
+              <h6 className="uppercase text-primary-500 font-semibold">
+                {item.obc_menu_title}
+              </h6>
+              <ul className="mt-8 flex flex-col gap-6">
+                {item.obc_menu_items.map((link) => (
+                  <li key={link.obc_menu_item_title}>
+                    <Link
+                      href={link.obc_menu_item_url}
+                      className="text-sm hover:text-primary-400 transition-all"
+                    >
+                      {link.obc_menu_item_title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
         <div className="col-span-2">
           <h6 className="text-primary-500 font-semibold uppercase">
@@ -153,7 +84,7 @@ const FooterLinksSection = ({
           </h6>
 
           {footer_address_locations?.map((item, index) => (
-            <div key={index} className="mt-6">
+            <div key={index} className="my-6">
               <Image
                 src={item?.obc_address_icon}
                 width={30}
@@ -168,11 +99,11 @@ const FooterLinksSection = ({
             </div>
           ))}
 
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <h6 className="text-primary-500 font-semibold uppercase">
               our latest updates
             </h6>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

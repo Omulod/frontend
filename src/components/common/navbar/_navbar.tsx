@@ -18,10 +18,6 @@ const navItems = [
     label: "Company",
     href: "#company",
   },
-  // {
-  //   label: "Works",
-  //   href: "#works",
-  // },
   {
     label: "Services",
     href: "#services",
@@ -38,11 +34,6 @@ const navItems = [
     label: "Contact",
     href: "#contact",
   },
-
-  // {
-  //   label: "Blog",
-  //   href: "#blog",
-  // },
 ];
 
 const Navbar = () => {
@@ -61,8 +52,6 @@ const Navbar = () => {
       setSiteSettings(data);
     });
   }, []);
-
-  console.log("siteSettings", siteSettings);
 
   const whatsappLink = siteSettings?.footer_settings.footer_social_links.find(
     (item) => item.obc_social_link_title == "WhatsApp"

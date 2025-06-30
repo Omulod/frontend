@@ -3,7 +3,7 @@ import WebsitePlanDetails from "./website-plan-details";
 
 const WebsitePlanSection = () => {
   return (
-    <section className="mt-32">
+    <section className="mt-32" id="pricing">
       <div className="container">
         <div className="max-w-[943px]">
           <SectionHeading

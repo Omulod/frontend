@@ -25,7 +25,7 @@ const items: IAccordionItem[] = [
 ];
 const FooterAccordion = () => {
   return (
-    <div>
+    <div className="container">
       <Accordion items={items} />
       <div className="flex items-center justify-end gap-6 pt-8">
         <div>

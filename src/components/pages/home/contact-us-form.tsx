@@ -7,6 +7,8 @@ import { useRef, useState } from "react";
 import clsx from "clsx";
 import Button from "@/components/ui/button";
 import Link from "next/link";
+import axios from "axios";
+import CheckIcon from "@/components/ui/icons/check-icon";
 
 const contactFormSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -28,6 +30,8 @@ const ContactUsForm = () => {
   const [attachedFile, setAttachedFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -35,6 +39,7 @@ const ContactUsForm = () => {
     // control,
     // setValue,
     // watch,
+    reset,
   } = useForm({
     resolver: yupResolver(contactFormSchema),
   });
@@ -56,8 +61,37 @@ const ContactUsForm = () => {
     }
   };
 
-  const onSubmit = (data: ContactFormValues) => {
-    console.log({ ...data, budget: selectedBudget, file: attachedFile });
+  const onSubmit = async (data: ContactFormValues) => {
+    try {
+      const formData = new FormData();
+      formData.append("email", data.email);
+      formData.append("name", data.name);
+      formData.append("budget", selectedBudget || "");
+      formData.append("message", data.message);
+
+      // Add file if selected
+      if (attachedFile) {
+        formData.append("attachment", attachedFile);
+      }
+
+      const res = await axios.post("/api/contact", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      if (res.status === 200) {
+        reset();
+        setAttachedFile(null);
+        setSelectedBudget(null);
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+    }
   };
 
   return (
@@ -151,13 +185,20 @@ const ContactUsForm = () => {
         </div>
       </div>
 
+      {showSuccessMessage && (
+        <p className="text-success-500 flex items-center gap-2">
+          <CheckIcon className="text-success-500" />
+          <span>Your message has been sent successfully.</span>
+        </p>
+      )}
+
       <div className="flex flex-wrap items-center gap-8">
         <Button
           type="submit"
           intent="secondary"
           size="large"
           className="px-20"
-          disabled={isSubmitting}
+          loading={isSubmitting}
         >
           Submit
         </Button>

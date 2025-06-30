@@ -64,9 +64,22 @@ export interface IFooterSettings {
   footer_copyright: string;
   footer_social_links: IFooterSocialLink[];
   footer_address_locations: IFooterAddressLocation[];
-  footer_menus: any[];
+  footer_menus: IFooterMenus[];
   our_agency_acounts: IOurAgencyAccount[];
 }
+
+export interface IFooterMenus {
+  _type: string;
+  obc_menu_title: string;
+  obc_menu_items: IObcMenuItem[];
+}
+
+export interface IObcMenuItem {
+  _type: string;
+  obc_menu_item_title: string;
+  obc_menu_item_url: string;
+}
+
 export interface IOurAgencyAccount {
   _type: string;
   obc_account_title: string;
