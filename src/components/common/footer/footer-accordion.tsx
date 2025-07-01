@@ -1,7 +1,8 @@
-import { IAccordionItem } from "@/types/common.types";
+import { IAccordionItem, ISiteSettings } from "@/types/common.types";
 import Accordion from "../accordion/_accordion";
 import ArrowRightUpIcon from "@/components/ui/icons/arrow-right-up-icon";
 import Button from "@/components/ui/button";
+import Link from "next/link";
 
 const items: IAccordionItem[] = [
   {
@@ -23,7 +24,15 @@ const items: IAccordionItem[] = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae earum maxime, minus at quaerat quas in? Incidunt doloremque aperiam reprehenderit pariatur quasi autem, expedita a sunt eveniet iure harum quos. Ipsa, quibusdam autem. Quaerat, vel quis cum provident, iusto dolor illum deserunt nihil ipsam doloremque deleniti doloribus quod fuga impedit! Praesentium, modi, assumenda atque dicta officia cumque unde repudiandae vitae perferendis quas numquam totam. Officia ab magnam reiciendis sequi voluptate vel aspernatur quas magni mollitia? Modi accusantium consequuntur nobis? Iusto cum cumque inventore modi. Sint sed maiores perferendis odit omnis! Amet nihil quaerat repudiandae tempore sit quae quasi aliquam cum.",
   },
 ];
-const FooterAccordion = () => {
+const FooterAccordion = ({
+  siteSettings,
+}: {
+  siteSettings: ISiteSettings | null;
+}) => {
+  const whatsappLink = siteSettings?.footer_settings.footer_social_links.find(
+    (item) => item.obc_social_link_title == "WhatsApp"
+  );
+
   return (
     <div className="container">
       <Accordion items={items} />
@@ -34,9 +43,15 @@ const FooterAccordion = () => {
             Call omulod*
           </p>
         </div>
-        <Button className="aspect-square !p-4">
-          <ArrowRightUpIcon />
-        </Button>
+        <Link
+          href={whatsappLink?.obc_social_link_title || ""}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button className="aspect-square !p-4">
+            <ArrowRightUpIcon />
+          </Button>
+        </Link>
       </div>
     </div>
   );

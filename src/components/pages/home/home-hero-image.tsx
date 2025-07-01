@@ -28,12 +28,14 @@ const HomeHeroImage = () => {
         // rotate: 45 + (mouseX / 60),
         transition: { duration: 1 },
       }}
+      className="flex md:block items-center justify-center"
     >
       <Image
         src="/images/hero-image.png"
         width={666}
         height={666}
         alt="hero-image"
+        className="md:w-[666px] md:h-[666px] w-[200px] h-[200px]"
       />
     </motion.div>
   );

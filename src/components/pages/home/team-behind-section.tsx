@@ -17,7 +17,7 @@ const TeamBehindSection = ({
         width={1640}
         height={570}
         alt="team-image"
-        className="absolute left-0 right-0 mx-auto w-full rounded-t-4xl -bottom-20 -z-10 opacity-60"
+        className="absolute left-0 right-0 mx-auto w-full rounded-t-4xl bottom-0 md:-bottom-20 -z-10 opacity-60"
       />
       <section id="company" className="container pt-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -84,7 +84,7 @@ const TeamBehindSection = ({
         </div>
 
         {/* image section */}
-        <div className="flex items-center justify-center -mt-10">
+        <div className="flex items-center justify-center md:-mt-10">
           {/* <div className="rounded-[1780px] absolute z-10 w-full h-[440px] bg-primary-700 filter blur-[145.82278442382812px]" /> */}
 
           <Image

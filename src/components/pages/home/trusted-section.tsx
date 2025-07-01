@@ -1,12 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import SectionHeading from "@/components/common/section-heading";
 import Button from "@/components/ui/button";
 import ArrowLongLeftIcon from "@/components/ui/icons/arrow-long-left-icon";
 import ArrowLongRightIcon from "@/components/ui/icons/arrow-long-right-icon";
-import TrustedSectionSlider from "./trusted-section-slider";
-import OmulodIcon from "@/components/ui/icons/omulod-icon";
-import Image from "next/image";
 import { ISiteSettings, ITestimonial } from "@/types/common.types";
-import Link from "next/link";
+import TrustedSectionSlider from "./trusted-section-slider";
 
 const TrustedSection = ({
   testimonials,
@@ -44,8 +42,8 @@ const TrustedSection = ({
       </div>
 
       <div className="overflow-clip">
-        <div className="container grid grid-cols-1 lg:grid-cols-12 gap-y-10 mt-14">
-          <div className="border lg:border-r-0 border-surface-border rounded-3xl lg:rounded-r-none p-8 col-span-1 lg:col-span-4 xl:col-span-3">
+        <div className="container grid grid-cols-1 lg:grid-cols-12 gap-y-10 mt-14 min-h-[456px]">
+          {/* <div className="border lg:border-r-0 border-surface-border rounded-3xl lg:rounded-r-none p-8 col-span-1 lg:col-span-4 xl:col-span-3">
             <h4>Reviews</h4>
             <p className="mt-2 text-neutral-40">
               Highly rated across multiple platforms
@@ -73,7 +71,7 @@ const TrustedSection = ({
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
 
           <div className="col-span-1 lg:col-span-8 xl:col-span-9 relative z-[100]">
             <div className="border border-surface-border h-full lg:absolute left-0 top-0 lg:w-screen">

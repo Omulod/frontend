@@ -54,29 +54,27 @@ const WebsitePlanDetails = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="md:container md:mx-auto overflow-x-clip">
       {/* Tab Navigation */}
-      <div className="rounded-3xl lg:rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex flex-wrap items-center justify-between gap-6 p-2 w-full mt-14 mb-20">
-        <div>
-          {apiPlansData.map((item) => (
-            <button
-              key={item.id}
-              className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px]"
-              onClick={handleTabClick(item.id)}
-            >
-              <span
-                className={cn(
-                  "absolute shadow-button backdrop-blur-3xl bg-primary-900 top-0 left-0 w-full h-full rounded-[100px] -z-10 transition-all duration-500",
-                  {
-                    "opacity-100": activeTabId === item.id,
-                    "opacity-0": activeTabId !== item.id,
-                  }
-                )}
-              />
-              {item.title}
-            </button>
-          ))}
-        </div>
+      <div className="rounded-[100px] rounded-r-none md:rounded-r-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex items-center justify-between gap-6 p-2 md:w-fit mt-14 whitespace-nowrap mb-20 overflow-x-auto w-screen ml-4 md:ml-0 hide-scrollbar">
+        {apiPlansData.map((item) => (
+          <button
+            key={item.id}
+            className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px]"
+            onClick={handleTabClick(item.id)}
+          >
+            <span
+              className={cn(
+                "absolute shadow-button backdrop-blur-3xl bg-primary-900 top-0 left-0 w-full h-full rounded-[100px] -z-10 transition-all duration-500",
+                {
+                  "opacity-100": activeTabId === item.id,
+                  "opacity-0": activeTabId !== item.id,
+                }
+              )}
+            />
+            {item.title}
+          </button>
+        ))}
 
         {/* Currency Selector */}
         {/* <div className="flex items-center gap-2">
@@ -130,7 +128,7 @@ const WebsitePlanDetails = () => {
       </div> */}
 
       {/* Pricing Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-12 mx-4 md:mx-0">
         {getCurrentPlans({
           billingPeriod,
         })?.plans.map((plan, index) => (
@@ -138,7 +136,7 @@ const WebsitePlanDetails = () => {
             key={index}
             billingPeriod={billingPeriod}
             currency={currency}
-            onButtonClick={(plan) => console.log(plan)}
+            onButtonClick={(plan) => console.log("plan")}
             plan={plan}
           />
         ))}

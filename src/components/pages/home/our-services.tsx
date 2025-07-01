@@ -17,7 +17,10 @@ const OurServices = ({
   }, []);
 
   return (
-    <section id="services" className="bg-surface-black-01 pb-28">
+    <section
+      id="services"
+      className="bg-surface-black-01 pb-28 overflow-x-clip"
+    >
       <div className="container">
         <SectionHeading
           subtitle="Our Services"
@@ -32,7 +35,7 @@ const OurServices = ({
             "For Startups, SaaS Teams & Global Brands"}
         </p>
 
-        <div className="rounded-3xl lg:rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex flex-wrap items-center justify-between gap-6 p-2 w-fit my-14">
+        <div className="rounded-[100px] rounded-r-none md:rounded-r-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex items-center justify-between gap-6 p-2 md:w-fit mt-14 whitespace-nowrap mb-20 overflow-x-auto pr-[22vw] md:pr-2 w-screen hide-scrollbar">
           {servicesData.map((item) => (
             <button
               key={item.id}

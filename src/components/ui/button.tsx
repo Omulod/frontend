@@ -29,7 +29,7 @@ const button = cva("relative transition-all cursor-pointer", {
     size: {
       small: ["px-6", "py-2.5", "text-sm"],
       medium: ["px-8", "py-4", "text-base"],
-      large: ["px-10", "py-[1.1257rem]", "text-lg"],
+      large: ["md:px-10", "md:py-[1.1257rem]", "px-6", "py-3.5", "text-lg"],
     },
     modifier: {
       outline: [
