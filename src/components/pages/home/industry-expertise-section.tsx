@@ -5,6 +5,7 @@ import ArrowLongRightIcon from "@/components/ui/icons/arrow-long-right-icon";
 import IndustryExpertiseSlider from "./industry-expertise-slider";
 import Image from "next/image";
 import { IIndustry } from "@/types/common.types";
+import ExpertiseCard from "@/components/common/cards/expertise-card";
 
 const IndustryExpertiseSection = ({ industry }: { industry?: IIndustry }) => {
   return (
@@ -14,7 +15,7 @@ const IndustryExpertiseSection = ({ industry }: { industry?: IIndustry }) => {
         width={666}
         height={666}
         alt="hero-image"
-        className="absolute -top-[40%] right-[15%]"
+        className="absolute -top-[40%] right-[15%] hidden md:block"
       />
       <div className="container flex items-center justify-between gap-4">
         <SectionHeading
@@ -25,7 +26,7 @@ const IndustryExpertiseSection = ({ industry }: { industry?: IIndustry }) => {
           className="max-w-[900px] relative z-10"
         />
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-4">
           <Button
             className="aspect-square !p-4"
             intent="secondary"
@@ -44,11 +45,26 @@ const IndustryExpertiseSection = ({ industry }: { industry?: IIndustry }) => {
       </div>
 
       <div className="container relative mt-14">
-        <div className="lg:h-[470px]">
+        <div className="lg:h-[470px] hidden md:block">
           <IndustryExpertiseSlider
             industry_categories={industry?.industry_categories || []}
             className="lg:absolute lg:w-screen left-0 top-0"
           />
+        </div>
+        <div className="md:hidden flex flex-col gap-8">
+          {industry?.industry_categories.map((item, index) => (
+            <ExpertiseCard
+              key={index}
+              title={item?.industry_category_name}
+              subtitle={item?.industry_category_moto}
+              icon={item?.industry_category_icon}
+              keyPainPoints={item?.key_plans?.map(
+                (item) => item?.key_plan_name
+              )}
+              approach={item?.approaches?.map((item) => item?.approach_name)}
+              className="cursor-grab"
+            />
+          ))}
         </div>
       </div>
     </div>

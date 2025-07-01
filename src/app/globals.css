@@ -263,7 +263,16 @@ html {
   border-radius: 30px;
 }
 
-.hide-scrollbar {
+@utility hide-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none; /* disables callout menu on iOS Safari */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }

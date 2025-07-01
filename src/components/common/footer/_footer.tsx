@@ -20,7 +20,7 @@ const Footer = async () => {
         }
         footer_menus={siteSettings?.footer_settings?.footer_menus}
       />
-      <FooterAccordion />
+      <FooterAccordion siteSettings={siteSettings} />
       <FooterBottom />
     </footer>
   );

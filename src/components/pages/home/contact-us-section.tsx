@@ -67,11 +67,11 @@ const ContactUsSection = () => {
           title="Ready to share your vision? Let’s talk!"
         />
 
-        <div className="rounded-3xl lg:rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex flex-wrap items-center gap-6 p-2 w-fit my-14">
+        <div className="rounded-3xl lg:rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex items-center gap-2 lg:gap-6 p-2 w-fit my-14">
           {tabItems.map((item) => (
             <button
               key={item.id}
-              className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px] w-[200px] whitespace-nowrap"
+              className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px] w-[160px] lg:w-[200px] whitespace-nowrap"
               onClick={() => setActiveTabId(item.id)}
             >
               <span

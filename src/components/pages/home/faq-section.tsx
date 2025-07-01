@@ -66,7 +66,7 @@ const FaqSection = ({
               name="Saif"
               subtitle="We help you launch faster — with clarity and confidence."
               points={[
-                "et started in under 1 day",
+                "Get started in under 1 day",
                 "Define scope & goals together",
                 "Receive first designs in 4–5 days",
                 "Refine, build, and launch",
