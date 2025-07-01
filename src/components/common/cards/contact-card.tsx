@@ -42,20 +42,22 @@ const ContactCard = ({
       </div>
       <h5>{title}</h5>
       <div className="mt-6 flex flex-wrap justify-between gap-4">
-        <Image
-          src={image}
-          width={96}
-          height={96}
-          alt="ceo-image"
-          className="object-scale-down rounded-xl"
-        />
-        <div>
-          <p className="text-xl font-semibold">{name}</p>
-          <p className="my-0.5 text-lg">{position}</p>
-          <p className="flex text-lg items-center gap-2">
-            <CopyIcon size={17} />
-            <span className="underline">{email}</span>
-          </p>
+        <div className="flex items-center gap-6">
+          <Image
+            src={image}
+            width={96}
+            height={96}
+            alt="ceo-image"
+            className="object-scale-down rounded-xl"
+          />
+          <div>
+            <p className="text-xl font-semibold">{name}</p>
+            <p className="my-0.5 text-lg">{position}</p>
+            <p className="flex text-lg items-center gap-2">
+              <CopyIcon size={17} />
+              <span className="underline">{email}</span>
+            </p>
+          </div>
         </div>
         <div className="flex items-center gap-2 self-start min-w-20">
           <Link href={facebook} target="_blank" rel="noreferrer">
