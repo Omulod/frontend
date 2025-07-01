@@ -8,7 +8,7 @@ const FooterLogoSection = ({
   our_agency_acounts?: IOurAgencyAccount[];
 }) => {
   return (
-    <div className="flex items-center justify-center gap-6 flex-wrap lg:flex-nowrap">
+    <div className="flex items-center justify-center gap-6 flex-wrap lg:flex-nowrap container">
       {our_agency_acounts.map((account, index) => (
         <Link
           href={account?.obc_account_url}

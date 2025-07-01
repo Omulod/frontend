@@ -67,7 +67,7 @@ const FooterLinksSection = ({
                   <li key={link.obc_menu_item_title}>
                     <Link
                       href={link.obc_menu_item_url}
-                      className="text-sm hover:text-primary-400 transition-all"
+                      className="hover:text-primary-400 transition-all"
                     >
                       {link.obc_menu_item_title}
                     </Link>
