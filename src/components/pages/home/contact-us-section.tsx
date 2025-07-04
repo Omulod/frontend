@@ -14,7 +14,7 @@ const contactUsData = [
     position: "Co-Founder & COO",
     email: "mosharrof@omulod.com",
     facebook: "https://www.facebook.com/mosharrofuiux",
-    linkedin: "https://www.linkedin.com/in/mabfahad",
+    linkedin: "https://www.linkedin.com/in/mosharrofux",
   },
   {
     title: "Have a project to discuss?",
@@ -23,7 +23,7 @@ const contactUsData = [
     position: "Co-Founder & CTO",
     email: "fahad@omulod.com",
     facebook: "https://www.facebook.com/fahad.abdullah42",
-    linkedin: "https://www.linkedin.com/in/mosharrofux",
+    linkedin: "https://www.linkedin.com/in/mabfahad",
   },
 ];
 

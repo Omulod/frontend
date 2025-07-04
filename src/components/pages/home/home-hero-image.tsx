@@ -35,7 +35,7 @@ const HomeHeroImage = () => {
         width={666}
         height={666}
         alt="hero-image"
-        className="md:w-[666px] md:h-[666px] w-[200px] h-[200px]"
+        className="md:w-[666px] md:h-[666px] w-[200px] h-[200px] object-scale-down"
       />
     </motion.div>
   );
