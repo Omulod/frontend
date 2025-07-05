@@ -67,11 +67,11 @@ const ContactUsSection = () => {
           title="Ready to share your vision? Let’s talk!"
         />
 
-        <div className="rounded-3xl lg:rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex items-center gap-2 lg:gap-6 p-2 w-fit my-14">
+        <div className="rounded-3xl lg:rounded-[100px] bg-[#1a1a1a] backdrop-blur-3xl shadow-button-secondary flex items-center gap-2 lg:gap-6 p-2 mt-14 w-full max-w-[943px]">
           {tabItems.map((item) => (
             <button
               key={item.id}
-              className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px] w-[160px] lg:w-[200px] whitespace-nowrap"
+              className="relative px-4 lg:px-10 cursor-pointer py-2 font-semibold rounded-[100px] whitespace-nowrap w-full"
               onClick={() => setActiveTabId(item.id)}
             >
               <span
@@ -91,7 +91,7 @@ const ContactUsSection = () => {
         {activeTabId === 1 && <ContactUsForm />}
 
         {activeTabId === 2 && (
-          <div className="border border-transparent">
+          <div className="border border-transparent mt-14">
             <Cal
               namespace="30min"
               calLink="omulod/30min"

@@ -22,8 +22,8 @@ const HomeHeroImage = () => {
     <motion.div
       layoutId={mouseX.toString() + mouseY.toString()}
       animate={{
-        x: mouseX / 60,
-        y: mouseY / 60,
+        x: mouseX / 35,
+        y: mouseY / 35,
         // prettier-ignore
         // rotate: 45 + (mouseX / 60),
         transition: { duration: 1 },

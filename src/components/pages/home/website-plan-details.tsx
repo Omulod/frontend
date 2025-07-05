@@ -2,13 +2,22 @@
 "use client";
 
 import { cn } from "@/helpers/cn";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { billingPeriods } from "./website-plan-data.helper";
 import Button from "@/components/ui/button";
 import PricingCard from "@/components/common/cards/pricing-card";
 import { IPricingData } from "@/types/pricing.types";
 
-const WebsitePlanDetails = () => {
+const WebsitePlanDetails = ({
+  setCurrentSectionTitles,
+}: {
+  setCurrentSectionTitles: Dispatch<
+    SetStateAction<{
+      title: string;
+      subtitle: string;
+    }>
+  >;
+}) => {
   // State management
   const [activeTabId, setActiveTabId] = useState(1);
   const [billingPeriod, setBillingPeriod] = useState<string>("Monthly");
@@ -18,6 +27,17 @@ const WebsitePlanDetails = () => {
   const handleTabClick = (tabId: number) => () => {
     setActiveTabId(tabId);
   };
+
+  useEffect(() => {
+    setCurrentSectionTitles((prev) => ({
+      ...prev,
+      subtitle:
+        apiPlansData.find((plan) => plan.id === activeTabId)?.title ?? " ",
+      title:
+        apiPlansData.find((plan) => plan.id === activeTabId)?.meta
+          ?.pricing_title ?? " ",
+    }));
+  }, [activeTabId]);
 
   const handleBillingChange = (period: string) => {
     setBillingPeriod(period);
