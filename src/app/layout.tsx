@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/common/footer/_footer";
 import Navbar from "@/components/common/navbar/_navbar";
+import MSClarity from "@/helpers/ms-clarity";
+import GoogleAnalytics from "@/helpers/google-analytics";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,6 +21,8 @@ export default function RootLayout({
         <Navbar />
         <main className="flex grow flex-col">{children}</main>
         <Footer />
+        <GoogleAnalytics />
+        <MSClarity />
       </body>
     </html>
   );

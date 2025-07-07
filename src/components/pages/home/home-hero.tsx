@@ -4,18 +4,18 @@ import Link from "next/link";
 import { ISiteSettings } from "@/types/common.types";
 import HomeHeroImage from "./home-hero-image";
 import CalButton from "@/components/ui/cal-button";
+import HomeHeroTypeAnim from "./home-hero-type-anim";
 
 const HomeHero = ({ siteSettings }: { siteSettings: ISiteSettings | null }) => {
   const reviews = siteSettings?.review_items || [];
 
   return (
     <div className="overflow-x-clip">
-      <section className="container lg:min-h-[700px] lg:h-[calc(100vh-188px)] grid grid-cols-1 lg:grid-cols-12 gap-8 py-8 md:py-16">
+      <section className="container lg:min-h-[700px] lg:h-[calc(100vh-172px)] grid grid-cols-1 lg:grid-cols-12 gap-8 py-8 md:py-14">
         <div className=" lg:col-span-7 my-auto order-2 md:order-1">
           <h1 className="text-center md:text-left">
-            Global design & development agency helping you{" "}
-            <span className="text-primary-500">simplify*</span> digital
-            experiences
+            Global design & development agency helping you <HomeHeroTypeAnim />
+            digital experiences
           </h1>
 
           <p className="py-6 md:py-10 max-w-[650px] lg:max-w-[804px] capitalize text-lg xl:text-3xl italic font-light text-center md:text-left">
@@ -41,7 +41,7 @@ const HomeHero = ({ siteSettings }: { siteSettings: ISiteSettings | null }) => {
           </div>
 
           {/* review */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-4 gap-x-14 mt-12">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-y-4 gap-x-14 mt-14 md:mt-28">
             {reviews.map((item, index) => (
               <div key={index}>
                 <Image

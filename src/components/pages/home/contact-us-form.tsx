@@ -96,7 +96,7 @@ const ContactUsForm = () => {
 
   return (
     <form
-      className="mt-14 max-w-[943px] flex flex-col gap-10"
+      className="mt-14 flex flex-col gap-10 border border-surface-border p-6 rounded-2xl bg-surface-black-03 max-w-[943px]"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="grid grid-cols-2 gap-8">
@@ -197,7 +197,7 @@ const ContactUsForm = () => {
           type="submit"
           intent="secondary"
           size="large"
-          className="px-20"
+          className="!px-20"
           loading={isSubmitting}
         >
           Submit

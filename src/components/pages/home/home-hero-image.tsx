@@ -22,8 +22,8 @@ const HomeHeroImage = () => {
     <motion.div
       layoutId={mouseX.toString() + mouseY.toString()}
       animate={{
-        x: mouseX / 60,
-        y: mouseY / 60,
+        x: mouseX / 35,
+        y: mouseY / 35,
         // prettier-ignore
         // rotate: 45 + (mouseX / 60),
         transition: { duration: 1 },
@@ -35,7 +35,7 @@ const HomeHeroImage = () => {
         width={666}
         height={666}
         alt="hero-image"
-        className="md:w-[666px] md:h-[666px] w-[200px] h-[200px]"
+        className="md:w-[666px] md:h-[666px] w-[200px] h-[200px] object-scale-down"
       />
     </motion.div>
   );

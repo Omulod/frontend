@@ -10,15 +10,15 @@ const HeroSlider = ({
   const clientLogos = siteSettings?.client_logos || [];
 
   return (
-    <Marquee autoFill className="py-4 md:py-8 bg-neutral-800">
+    <Marquee autoFill className="py-4 md:py-[26px] bg-neutral-800">
       {clientLogos.map((item, index) => (
-        <div key={index} className="mx-8 md:mx-16">
+        <div key={index} className="mx-8">
           <Image
             src={item?.obc_client_logo_image}
             width={114}
-            height={32}
+            height={28}
             alt="logos"
-            className="w-32 h-8 object-scale-down"
+            className="w-32 h-7 object-scale-down"
           />
         </div>
       ))}

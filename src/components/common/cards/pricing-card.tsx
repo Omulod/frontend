@@ -35,14 +35,16 @@ const PricingCard = ({
         plan?.is_featured && "border-primary-900"
       )}
     >
-      <div>
+      <div className="absolute left-0 bottom-0 h-full rounded-3xl opacity-0 group-hover:opacity-60 transition-all">
         <Image
-          src="/images/hover-gradiant.svg"
+          src="/images/hover-gradiant-default.png"
           width={1640}
-          height={970}
+          height={1640}
           alt="hover-gradiant"
-          className="absolute left-0 right-0 bottom-0 rounded-3xl opacity-0 group-hover:opacity-80 transition-all duration-300"
+          className="h-full w-full object-cover rounded-3xl"
         />
+      </div>
+      <div>
         {plan?.is_featured && (
           <div className="absolute bg-primary-500 -top-5 right-10 rounded-lg text-primary-900 flex items-center gap-2 font-bold py-2 px-3.5">
             <CrownIcon />

@@ -72,7 +72,7 @@ const CeoCard = ({
       </div>
 
       <Link href={whatsAppLink || ""} target="_blank" rel="noreferrer">
-        <Button className="w-full mt-24 pr-5" intent="secondary" size="large">
+        <Button className="w-full mt-24 !pr-5" intent="secondary" size="large">
           <div className="flex items-center justify-between gap-4">
             <span>Ask Question</span>
             <WhatsappIcon size={36} />

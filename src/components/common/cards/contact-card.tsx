@@ -1,7 +1,10 @@
+"use client";
+import CheckIcon from "@/components/ui/icons/check-icon";
 import CopyIcon from "@/components/ui/icons/copy-icon";
 import { cn } from "@/helpers/cn";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState } from "react";
 
 interface IContactCard {
   title: string;
@@ -24,6 +27,18 @@ const ContactCard = ({
   linkedin,
   className,
 }: IContactCard) => {
+  const [tempChecked, setTempChecked] = useState<boolean>(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+
+    setTempChecked(true);
+
+    setTimeout(() => {
+      setTempChecked(false);
+    }, 1500);
+  };
+
   return (
     <div
       className={cn(
@@ -53,8 +68,18 @@ const ContactCard = ({
           <div>
             <p className="text-xl font-semibold">{name}</p>
             <p className="my-0.5 text-lg">{position}</p>
-            <p className="flex text-lg items-center gap-2">
-              <CopyIcon size={17} />
+            <p
+              className="flex text-lg items-center gap-2 cursor-pointer"
+              onClick={() => {
+                handleCopy();
+              }}
+            >
+              {tempChecked ? (
+                <CheckIcon size={17} className="text-success-500" />
+              ) : (
+                <CopyIcon size={17} />
+              )}
+
               <span className="underline">{email}</span>
             </p>
           </div>
