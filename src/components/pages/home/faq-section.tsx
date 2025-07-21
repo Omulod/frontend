@@ -1,8 +1,11 @@
+"use client";
 import Accordion from "@/components/common/accordion/_accordion";
 import CeoCard from "@/components/common/cards/ceo-card";
 import SectionHeading from "@/components/common/section-heading";
 import { IFaqData } from "@/types/common.types";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 const FaqSection = ({
   faqsData,
@@ -11,8 +14,15 @@ const FaqSection = ({
   faqsData: IFaqData[];
   whatsAppLink?: string;
 }) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const topPosition = useTransform(scrollYProgress, [0, 1], ["80%", "0%"]);
   return (
-    <section id="faqs" className="overflow-x-clip mt-28 pb-20">
+    <section ref={sectionRef} id="faqs" className="overflow-x-clip mt-28 pb-20">
       <div className="container">
         <SectionHeading
           subtitle="FAQs"
@@ -53,14 +63,25 @@ const FaqSection = ({
             ))}
           </div>
 
-          <div className="lg:col-span-4 h-fit mt-10 relative">
-            <Image
-              src="/images/hero-image.png"
-              width={666}
-              height={666}
-              alt="hero-image"
-              className="absolute -right-44 top-[70%] -z-10"
-            />
+          <div className="lg:col-span-4 h-fit mt-10 sticky top-10">
+            <motion.div
+              style={{ top: topPosition }}
+              className="absolute -right-56 -z-10"
+              transition={{
+                type: "spring",
+                stiffness: 50,
+                damping: 15,
+                mass: 0.8,
+                bounce: 4.3,
+              }}
+            >
+              <Image
+                src="/images/hero-image.png"
+                width={555}
+                height={555}
+                alt="hero-image"
+              />
+            </motion.div>
             <CeoCard
               image="/images/ceo-pic.png"
               name="Saif"

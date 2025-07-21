@@ -45,7 +45,7 @@ const CeoCard = ({
       <p className="">{subtitle}</p>
       <div className="flex flex-col gap-1 mt-6">
         <p>Here&apos;s how we work:</p>
-        <ol>
+        <ol className="list-decimal pl-4">
           {points.map((point) => (
             <li key={point}>{point}</li>
           ))}
