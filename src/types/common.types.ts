@@ -180,3 +180,17 @@ export interface IKeyPlan {
   _type: string;
   key_plan_name: string;
 }
+
+export interface ITechnologyData {
+  term_id: number;
+  name: string;
+  slug: string;
+  term_group: number;
+  term_taxonomy_id: number;
+  taxonomy: string;
+  description: string;
+  parent: number;
+  count: number;
+  filter: string;
+  children: ITechnologyData[];
+}
