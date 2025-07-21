@@ -101,7 +101,7 @@ const ContactUsSection = () => {
           </div>
         )}
       </div>
-      <div className="lg:col-span-4 h-fit border border-surface-border rounded-2xl">
+      <div className="lg:col-span-4 h-fit sticky top-8 border border-surface-border rounded-2xl">
         {contactUsData.map((item, index) => (
           <ContactCard
             key={index}

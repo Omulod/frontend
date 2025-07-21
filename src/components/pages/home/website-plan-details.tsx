@@ -15,6 +15,7 @@ const WebsitePlanDetails = ({
     SetStateAction<{
       title: string;
       subtitle: string;
+      pricing_moto: string;
     }>
   >;
 }) => {
@@ -36,6 +37,9 @@ const WebsitePlanDetails = ({
       title:
         apiPlansData.find((plan) => plan.id === activeTabId)?.meta
           ?.pricing_title ?? " ",
+      pricing_moto:
+        apiPlansData.find((plan) => plan.id === activeTabId)?.meta
+          ?.pricing_moto ?? " ",
     }));
   }, [activeTabId]);
 

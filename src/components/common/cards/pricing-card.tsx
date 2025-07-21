@@ -56,6 +56,21 @@ const PricingCard = ({
           <h5 className="mb-4">{plan?.plan_name}</h5>
           <div className="mb-2">
             <h2 className="relative inline">
+              <span
+                className={cn(
+                  "text-sm absolute top-2.5 left-[calc(100%+4px)] whitespace-nowrap bg-[#16472380] px-2 rounded-xl py-0.5",
+                  {
+                    hidden:
+                      currency === "GBP"
+                        ? !plan?.gbp_pricing_details[0].gbp_sale_price_text
+                        : !plan?.usd_pricing_details[0].usd_sale_price_text,
+                  }
+                )}
+              >
+                {currency === "GBP"
+                  ? plan?.gbp_pricing_details[0].gbp_sale_price_text
+                  : plan?.usd_pricing_details[0].usd_sale_price_text}
+              </span>
               {currency === "GBP"
                 ? plan?.gbp_pricing_details[0].gbp_sale_price
                 : plan?.usd_pricing_details[0].usd_sale_price}
@@ -66,6 +81,11 @@ const PricingCard = ({
             )}
           </div>
           <p className="line-clamp-1">{plan?.price_subtext}</p>
+          {plan?.pricing_plan_custom_text && (
+            <p className="line-clamp-1 mt-6 text-primary-500 p-4 rounded-lg bg-neutral-700">
+              {plan?.pricing_plan_custom_text}
+            </p>
+          )}
         </div>
 
         <div className="space-y-3 my-8 pt-6 border-t border-surface-border">
