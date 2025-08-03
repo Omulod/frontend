@@ -58,7 +58,7 @@ const PricingCard = ({
             <h2 className="relative inline">
               <span
                 className={cn(
-                  "text-sm absolute top-2.5 left-[calc(100%+4px)] whitespace-nowrap bg-[#16472380] px-2 rounded-xl py-0.5",
+                  "text-sm absolute -top-2 md:top-2.5 left-[calc(100%+4px)] whitespace-nowrap bg-[#16472380] px-2 rounded-xl py-0.5",
                   {
                     hidden:
                       currency === "GBP"
