@@ -21,7 +21,7 @@ const FooterLogoSection = ({
             width={144}
             height={80}
             alt="logos"
-            className="w-36 h-8 object-scale-down"
+            className="md:w-36 md:h-8 object-scale-down h-4 w-20"
           />
         </Link>
       ))}

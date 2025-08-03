@@ -20,7 +20,7 @@ const FooterLinksSection = ({
   footer_menus?: IFooterMenus[];
 }) => {
   return (
-    <div className="container grid grid-cols-1 lg:grid-cols-12 gap-y-10 py-14">
+    <div className="container grid grid-cols-1 lg:grid-cols-12 gap-y-10 py-8 md:py-14">
       <div className="lg:col-span-4 max-w-[386px]">
         <Link href="/">
           <Image
@@ -55,8 +55,8 @@ const FooterLinksSection = ({
           </div>
         </Button> */}
       </div>
-      <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-5 gap-4">
-        <div className="col-span-3 flex gap-8 justify-between">
+      <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-5 gap-y-8 gap-x-4">
+        <div className="col-span-3 flex gap-8 flex-wrap justify-between">
           {footer_menus?.map((item) => (
             <div key={item.obc_menu_title} className="w-full">
               <h6 className="uppercase text-primary-500 font-semibold">

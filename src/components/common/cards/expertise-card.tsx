@@ -1,3 +1,4 @@
+import ArrowDownIcon from "@/components/ui/icons/arrow-down-icon";
 import OmulodIcon from "@/components/ui/icons/omulod-icon";
 import { cn } from "@/helpers/cn";
 import Image from "next/image";
@@ -41,8 +42,17 @@ const ExpertiseCard = ({
       <p className="text-sm font-light">{subtitle}</p>
       <div className="mt-4 md:mt-10 border border-surface-border rounded-2xl grid grid-cols-1 md:grid-cols-2">
         <div className="p-4 md:border-r border-surface-border">
-          <p className="border-b border-surface-border pb-4 mb-4">
-            Key Pain Points We Fix
+          <p
+            className="border-b border-surface-border pb-4 mb-4 flex items-center gap-2 justify-between"
+            onClick={() => {
+              // should open the whole card content
+            }}
+          >
+            <span>Key Pain Points We Fix</span>
+            <ArrowDownIcon
+              size={16}
+              className="mr-2 text-primary-500 md:hidden"
+            />
           </p>
           <ul>
             {keyPainPoints.map((item) => (

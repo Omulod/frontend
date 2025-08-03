@@ -96,7 +96,7 @@ const ContactUsForm = () => {
 
   return (
     <form
-      className="mt-14 flex flex-col gap-10 border border-surface-border p-6 rounded-2xl bg-surface-black-03 max-w-[943px]"
+      className="mt-14 flex flex-col gap-6 md:gap-10 border border-surface-border p-6 rounded-2xl bg-surface-black-03 max-w-[943px]"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="grid grid-cols-2 gap-8">
@@ -173,7 +173,7 @@ const ContactUsForm = () => {
               type="button"
               onClick={() => handleBudgetSelect(option.value)}
               className={clsx(
-                "rounded-[50px] px-6 py-4 border transition-all cursor-pointer",
+                "rounded-[50px] px-3.5 md:px-6 text-sm md:text-base py-2 md:py-4 border transition-all cursor-pointer",
                 selectedBudget === option.value
                   ? "bg-primary-500 border-transparent"
                   : "border-surface-border text-neutral-0 hover:bg-primary-500"
@@ -197,7 +197,7 @@ const ContactUsForm = () => {
           type="submit"
           intent="secondary"
           size="large"
-          className="!px-20"
+          className="!px-10 !py-2 md:!px-20"
           loading={isSubmitting}
         >
           Submit
