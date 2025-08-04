@@ -52,7 +52,7 @@ const Footer = async () => {
   const technologiesData = await getTechnologiesData();
 
   return (
-    <footer className="pt-20 md:pt-40">
+    <footer className="pt-10 md:pt-40">
       <FooterLogoSection
         our_agency_acounts={siteSettings?.footer_settings?.our_agency_acounts}
       />

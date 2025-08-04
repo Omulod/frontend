@@ -45,7 +45,7 @@ const ServicesFooterAccordion = ({
         {/* Services Accordion */}
         <div
           className={cn(
-            "border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-03 px-8 py-3"
+            "border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-03 px-4 md:px-8 py-1 md:py-3"
           )}
         >
           <div
@@ -54,16 +54,19 @@ const ServicesFooterAccordion = ({
           >
             <div>
               <h3
-                className={cn("text-xl font-semibold transition-all", {
-                  "text-primary-500": expanded === "services",
-                })}
+                className={cn(
+                  "text-lg md:text-xl font-semibold transition-all",
+                  {
+                    "text-primary-500": expanded === "services",
+                  }
+                )}
               >
                 Show all services
               </h3>
             </div>
             <div>
               <ArrowDownIcon
-                className={cn("transition-all", {
+                className={cn("transition-all w-4 md:w-6", {
                   "rotate-180": expanded === "services",
                   "rotate-0": expanded !== "services",
                 })}
@@ -113,7 +116,7 @@ const ServicesFooterAccordion = ({
         {/* Technologies Accordion */}
         <div
           className={cn(
-            "border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-03 px-8 py-3"
+            "border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-03 px-4 md:px-8 py-1 md:py-3"
           )}
         >
           <div
@@ -122,16 +125,19 @@ const ServicesFooterAccordion = ({
           >
             <div>
               <h3
-                className={cn("text-xl font-semibold transition-all", {
-                  "text-primary-500": expanded === "technologies",
-                })}
+                className={cn(
+                  "text-lg md:text-xl font-semibold transition-all",
+                  {
+                    "text-primary-500": expanded === "technologies",
+                  }
+                )}
               >
                 Show all technologies
               </h3>
             </div>
             <div>
               <ArrowDownIcon
-                className={cn("transition-all", {
+                className={cn("transition-all w-4 md:w-6", {
                   "rotate-180": expanded === "technologies",
                   "rotate-0": expanded !== "technologies",
                 })}
@@ -177,7 +183,7 @@ const ServicesFooterAccordion = ({
         {/* Industries Accordion */}
         <div
           className={cn(
-            "border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-03 px-8 py-3"
+            "border border-surface-border rounded-3xl backdrop-blur-xs bg-surface-black-03 px-4 md:px-8 py-1 md:py-3"
           )}
         >
           <div
@@ -186,16 +192,19 @@ const ServicesFooterAccordion = ({
           >
             <div>
               <h3
-                className={cn("text-xl font-semibold transition-all", {
-                  "text-primary-500": expanded === "industries",
-                })}
+                className={cn(
+                  "text-lg md:text-xl font-semibold transition-all",
+                  {
+                    "text-primary-500": expanded === "industries",
+                  }
+                )}
               >
                 Show all industries
               </h3>
             </div>
             <div>
               <ArrowDownIcon
-                className={cn("transition-all", {
+                className={cn("transition-all w-4 md:w-6", {
                   "rotate-180": expanded === "industries",
                   "rotate-0": expanded !== "industries",
                 })}

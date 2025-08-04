@@ -42,7 +42,7 @@ const ContactCard = ({
   return (
     <div
       className={cn(
-        "relative z-40 p-8 bg-transparent transition-all group overflow-clip",
+        "relative z-40 p-4 md:p-8 bg-transparent transition-all group overflow-clip",
         className
       )}
     >
@@ -56,18 +56,18 @@ const ContactCard = ({
         />
       </div>
       <h5>{title}</h5>
-      <div className="mt-6 flex flex-wrap justify-between gap-4">
-        <div className="flex items-center gap-6">
+      <div className="mt-3 md:mt-6 flex flex-wrap justify-between gap-4">
+        <div className="flex items-center gap-4 md:gap-6">
           <Image
             src={image}
             width={96}
             height={96}
             alt="ceo-image"
-            className="object-scale-down rounded-xl"
+            className="object-scale-down rounded-xl md:h-24 md:w-24 h-16 w-16"
           />
           <div>
-            <p className="text-xl font-semibold">{name}</p>
-            <p className="my-0.5 text-lg">{position}</p>
+            <p className="text-lg md:text-xl font-semibold">{name}</p>
+            <p className="my-0.5 md:text-lg">{position}</p>
             <p
               className="flex text-lg items-center gap-2 cursor-pointer"
               onClick={() => {
@@ -80,7 +80,7 @@ const ContactCard = ({
                 <CopyIcon size={17} />
               )}
 
-              <span className="underline">{email}</span>
+              <span className="underline text-sm md:text-base">{email}</span>
             </p>
           </div>
         </div>
@@ -91,6 +91,7 @@ const ContactCard = ({
               width={32}
               height={32}
               alt="facebook"
+              className="md:h-8 md:w-8 w-6 h-6 object-cover"
             />
           </Link>
 
@@ -100,6 +101,7 @@ const ContactCard = ({
               width={32}
               height={32}
               alt="linkedin"
+              className="md:h-8 md:w-8 w-6 h-6 object-cover"
             />
           </Link>
         </div>
