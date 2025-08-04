@@ -56,7 +56,7 @@ const FooterLinksSection = ({
         </Button> */}
       </div>
       <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-5 gap-y-8 gap-x-4">
-        <div className="col-span-3 flex gap-8 flex-wrap justify-between">
+        <div className="col-span-3 flex gap-8 flex-wrap md:flex-nowrap justify-between">
           {footer_menus?.map((item) => (
             <div key={item.obc_menu_title} className="w-full">
               <h6 className="uppercase text-primary-500 font-semibold">
