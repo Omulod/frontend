@@ -4,6 +4,7 @@ import Footer from "@/components/common/footer/_footer";
 import Navbar from "@/components/common/navbar/_navbar";
 import MSClarity from "@/helpers/ms-clarity";
 import GoogleAnalytics from "@/helpers/google-analytics";
+import MetaPixel from "@/helpers/meta-pixel";
 
 export const metadata: Metadata = {
   title: {
@@ -54,6 +55,7 @@ export default function RootLayout({
         <Footer />
         <GoogleAnalytics />
         <MSClarity />
+        <MetaPixel />
       </body>
     </html>
   );
